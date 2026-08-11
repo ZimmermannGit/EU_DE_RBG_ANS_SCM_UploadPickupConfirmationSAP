@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Check App State - Verify Uploaded File Exists",
+  "Type": "Element",
+  "Id": "pykvGMG3X0iYRDnrPdO-Vg",
+  "Reference": "fJM94VxrM0ieI8fVNIPlpA/pykvGMG3X0iYRDnrPdO-Vg",
+  "ParentRef": "fJM94VxrM0ieI8fVNIPlpA/ZOS0-XcCB0a55IMtScJmuQ",
+  "Created": "2026-08-11T10:46:21.9289708Z",
+  "Updated": "2026-08-11T10:46:21.9289708Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.32.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

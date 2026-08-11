@@ -62,6 +62,7 @@
       <x:String>UiPath.MicrosoftOffice365.Activities.Files</x:String>
       <x:String>UiPath.MicrosoftOffice365.Activities.Contracts</x:String>
       <x:String>UiPath.MicrosoftOffice365.Activities.Files.Contracts</x:String>
+      <x:String>UiPath.Semantic.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -135,20 +136,23 @@
       <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UploadDeliveryNotesToSAP" sap:VirtualizedContainerService.HintSize="937,5436" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UploadDeliveryNotesToSAP" sap:VirtualizedContainerService.HintSize="937,5708" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="strSourceFileName" />
       <Variable x:TypeArguments="x:String" Name="strPdfPath" />
       <Variable x:TypeArguments="x:String" Name="strDeliveryNumber" />
       <Variable x:TypeArguments="x:String" Name="strLocalPdfPath" />
+      <Variable x:TypeArguments="x:Boolean" Name="blnUploadSuccessful">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Boolean" />
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - Queue Item Info" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;If Transaction vorhanden: &quot; + (in_TransactionItem IsNot Nothing).ToString]" />
-    <Assign DisplayName="Assign - Read PDF Path" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_6">
+    <Assign DisplayName="Assign - Read PDF Path" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strPdfPath]</OutArgument>
       </Assign.To>
@@ -156,13 +160,13 @@
         <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("PdfPath").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="PrepareSapUpload - Invoke Workflow File (Workflows\PrepareSapUpload.xaml)" sap:VirtualizedContainerService.HintSize="452,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\PrepareSapUpload.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Invoke Workflow - Prepare SAP Upload" sap:VirtualizedContainerService.HintSize="488,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\PrepareSapUpload.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="out_LocalPdfPath">[strLocalPdfPath]</OutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_PdfPath">[strPdfPath]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign DisplayName="Assign - Build SAP Delivery Number" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strDeliveryNumber]</OutArgument>
       </Assign.To>
@@ -170,24 +174,8 @@
         <InArgument x:TypeArguments="x:String">["93" + in_TransactionItem.SpecificContent("DeliveryNumber").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_4">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[strPdfPath]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("PdfPath").ToString]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_5">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[strSourceFileName]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[strLocalPdfPath]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;DeliveryNumber: &quot; + strDeliveryNumber +&#xA;&quot; | PdfPath: &quot; + strPdfPath +&#xA;&quot; | SourceFileName: &quot; + strSourceFileName]" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Overview" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,481" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="89050719-accb-44af-8cbc-8925708e6d7a" Version="V2">
+    <ui:LogMessage DisplayName="Log Message - Upload Input Data" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;DeliveryNumber: &quot; + strDeliveryNumber +&#xD;&#xA;&quot; | PdfPath: &quot; + strPdfPath]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="NApplicationCard - Open VL02N" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,481" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="89050719-accb-44af-8cbc-8925708e6d7a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -199,7 +187,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NSAPCallTransaction DisplayName="Call Transaction" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="NSAPCallTransaction_2" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Transaction="VL02N" Version="V5">
+            <uix:NSAPCallTransaction DisplayName="SAP Call Transaction - VL02N" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="NSAPCallTransaction_2" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Transaction="VL02N" Version="V5">
               <uix:NSAPCallTransaction.Prefix>
                 <InArgument x:TypeArguments="x:String">
                   <Literal x:TypeArguments="x:String" Value="" />
@@ -233,7 +221,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="VL02N" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,747" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" ScopeGuid="89050719-accb-44af-8cbc-8925708e6d7a" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="NApplicationCard - Enter Delivery Number" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,747" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" ScopeGuid="89050719-accb-44af-8cbc-8925708e6d7a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -245,12 +233,12 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClipboardMode="Never" DisplayName="Type Into 'DeliveryNumber'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_13" InteractionMode="SameAsCard" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Text="[strDeliveryNumber]" Version="V5">
+            <uix:NTypeInto ActivateBefore="True" ClipboardMode="Never" DisplayName="Type Into - Delivery Number" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_13" InteractionMode="SameAsCard" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Text="[strDeliveryNumber]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="jK4pZq9zU0ycB-D1FAlP7g" DesignTimeRectangle="186, 203, 195, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/ctxtLIKP-VBELN' /&gt;" Guid="b2ccd6c0-82de-4e29-84e4-9deb5146301e" InformativeScreenshot="fa8e4383bce4b610c8bc553cd5219622.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/iAm1f1SEP0KfEJXQUvBW3w" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='Change Outbound Delivery' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NSAPClickToolbarButton DisplayName="Click Toolbar Button 'Toolbar tbar[0]'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,186" sap2010:WorkflowViewState.IdRef="NSAPClickToolbarButton_5" Item="Enter" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
+            <uix:NSAPClickToolbarButton DisplayName="SAP Click Toolbar Button - Enter Delivery" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,186" sap2010:WorkflowViewState.IdRef="NSAPClickToolbarButton_5" Item="Enter" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
               <uix:NSAPClickToolbarButton.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="9">
                   <x:String>Enter</x:String>
@@ -295,19 +283,19 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Upload Delivery Note" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,2790" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" ScopeGuid="89050719-accb-44af-8cbc-8925708e6d7a" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="NApplicationCard - Upload Delivery Note" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,3587" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" ScopeGuid="89050719-accb-44af-8cbc-8925708e6d7a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,2535" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,3332" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SAP.Toolbar.1(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_17" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Open Services For Object" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_17" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable ContentHash="X17qgQSiIE2fowMskVFjFg" DesignTimeRectangle="30, 90, 32, 22" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='titl/shellcont/shell' /&gt;" Guid="0c58e1b5-21ef-4c8a-b6cf-4a17ec91dda1" InformativeScreenshot="e6df61a835904ba01f31a33eb920b4a3.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/4xbfa2OZpE25XSi1LFB1FQ" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='Del. Returnable Pack 9348004607 Change: Overview' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.PointOffset>
@@ -316,7 +304,7 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SAP.Toolbar.1'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Open Attachment List" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable ContentHash="yghN4M0ac0eOwnuBFwvbxQ" DesignTimeRectangle="55, 177, 350, 32" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='shellcont/shell' /&gt;" Guid="5c83aadb-fe82-4d68-b345-9bead303b5d9" InformativeScreenshot="a45eedb3a47f9340200770f12c7ed72a.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/yQCgM9cCZ0KBlw-vaoHMKg" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='Del. Returnable Pack 9348004607 Display: Overview' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.PointOffset>
@@ -325,17 +313,17 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SAP.Toolbar.1(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Create Attachment" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable ContentHash="IdDdOA2NuUayemkqva0wMA" DesignTimeRectangle="3, 47, 245, 22" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Context' role='popup menu' /&gt;&lt;ctrl automationid='3' /&gt;" Guid="8898ec95-9af1-4b75-84dd-924163191f0a" InformativeScreenshot="d69bff604a953dc63c86f3a9f0be2e31.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/mD4K4qcyMUun7jIHpQ-kHg" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32768' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="[UiPath.UIAutomationNext.Enums.NClickType.Double]" DisplayName="Click 'SAP.Toolbar.1(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_12" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="[UiPath.UIAutomationNext.Enums.NClickType.Double]" DisplayName="Double Click - Select Archive Entry" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_12" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable ContentHash="2oMvL0uYakuv5asT4IifWg" DesignTimeRectangle="58, 115, 100, 17" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/ssubSUB110:SAPLALINK_DRAG_AND_DROP:0110/cntlSPLITTER/shellcont/shellcont/shell/shellcont[0]/shell' relpath='Outbound Delivery/Attachment - pdf' /&gt;&lt;sap itemId='HITLIST' /&gt;" Guid="03ae32bd-aa1f-48fe-ae80-aaeae3a3de12" InformativeScreenshot="77078a569ebd75c652effca6ced50cc7.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/Tz3y8vN_cEuxIO2LazgUdQ" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='Archive from Frontend' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'CUsersuidt0706Docum…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_15" InteractionMode="SameAsCard" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Text="[strLocalPdfPath.Replace(strDeliveryNumber + &quot;.pdf&quot;,&quot;&quot;)]" Version="V5">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into - Attachment Folder Path" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,246" sap2010:WorkflowViewState.IdRef="NTypeInto_15" InteractionMode="SameAsCard" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Text="[strLocalPdfPath.Replace(strDeliveryNumber + &quot;.pdf&quot;,&quot;&quot;)]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="YuUAP143zkCdCC-GHUyX9A" DesignTimeRectangle="87, 32, 356, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/txtDY_PATH' /&gt;" Guid="6f959511-249b-4868-afd2-016b8e242a0b" InformativeScreenshot="063ef617a33fae41e6ed65f1838bc5a1.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/Pjvrpb5sWkSpdrwyj8U8ig" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='Storing Files in Documents' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NTypeInto.Target>
@@ -350,7 +338,7 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'CUsersuidt0706Docum…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_16" InteractionMode="SameAsCard" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Text="[strDeliveryNumber + &quot;.pdf&quot;]" Version="V5">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into - Attachment File Name" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,246" sap2010:WorkflowViewState.IdRef="NTypeInto_16" InteractionMode="SameAsCard" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Text="[strDeliveryNumber + &quot;.pdf&quot;]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="v6fINcmDX0e1A7xTng07qA" DesignTimeRectangle="87, 54, 356, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/txtDY_FILENAME' /&gt;" Guid="bc7191c0-bb3c-4b90-9a09-9bef8b029985" InformativeScreenshot="521431e3b5c761882e1d8c3984f2c0e3.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/Ptf_IGmIKUGwAgGv_MJk8Q" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='Storing Files in Documents' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NTypeInto.Target>
@@ -365,12 +353,12 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Continue (Enter)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_13" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Confirm File Selection" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_13" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable ContentHash="vlROUeoyY024q9d2-qlzYg" DesignTimeRectangle="460, 91, 20, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[0]/btn[0]' /&gt;" Guid="55d0ea23-2fa3-483d-8a01-dc255ea5f67a" InformativeScreenshot="2e1bcdb1088bf0a5e4f8cdabda488158.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/2uZT9POGn0WTLLYpl6mF0Q" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='Storing Files in Documents' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'CUsersuidt0706Docum…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_17" InteractionMode="SameAsCard" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Text="Pickup Confirmation" Version="V5">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into - Attachment Description" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,246" sap2010:WorkflowViewState.IdRef="NTypeInto_17" InteractionMode="SameAsCard" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Text="Pickup Confirmation" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="mCvCe_2et02b1IzhyNKttw" DesignTimeRectangle="150, 54, 426, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/sub:SAPLSPO4:0300/txtSVALD-VALUE[1,21]' /&gt;" Guid="abeec950-f52b-4259-aa10-fb93158ec938" InformativeScreenshot="41cdf8f70d26880067a89211b6afbd74.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/aF_nqnG2wUqOkoMv82AVhA" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='File Description' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NTypeInto.Target>
@@ -385,22 +373,61 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Continue (Enter)(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_14" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Confirm Attachment Description" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_14" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable ContentHash="mu1qLIKRJ0aWlo0Ky31zBg" DesignTimeRectangle="740, 113, 20, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[0]/btn[0]' /&gt;" Guid="c6ff8de4-8f4b-466b-aad9-4dc7d3e40aa8" InformativeScreenshot="27485d4f47fbcc4b5b6ee74033190f53.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/IprHMsWc40y19-yN1BrFaw" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='File Description' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Continue (Enter)(2)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_15" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Confirm Archive Upload" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_15" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable ContentHash="MDhRVDqc1kStfOvpfaYrtQ" DesignTimeRectangle="515, 443, 20, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[0]/btn[0]' /&gt;" Guid="48481e9c-34af-4a9a-b7cb-d889d82b5046" InformativeScreenshot="0535b1464057866f283adcfbb3dc32ab.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/OnTuF2aK7EqMNrM7O8kBsg" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='Archive from Frontend' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Save (Ctrl+S)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_16" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
+            <uix:NCheckState DisplayName="Check App State - Verify Uploaded File Exists" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,797" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign - Upload Successful" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[blnUploadSuccessful]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign - Upload Failed" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_8">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[blnUploadSuccessful]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable ContentHash="PkoaYiuatUCe87EC1zXhUQ" DesignTimeRectangle="296, 76, 287, 351" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/ssubSUB110:SAPLALINK_DRAG_AND_DROP:0110/cntlSPLITTER/shellcont/shellcont/shell/shellcont[1]/shell' /&gt;" Guid="fd14846e-0e74-43b5-b23b-166235999c2e" InformativeScreenshot="c064f8ee74f2c20d507f2d9b0d14ef59.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/pykvGMG3X0iYRDnrPdO-Vg" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='Archive from Frontend' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Save Delivery" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_16" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable ContentHash="GLFI3DRG8kqQ2i2aHbgnYA" DesignTimeRectangle="230, 50, 22, 22" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[0]/btn[11]' /&gt;" Guid="47696001-a4af-44e1-a5be-93e86489855a" InformativeScreenshot="29edb630cd0ca3026718d0bf182c2ec4.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/3pOGudhp5UWAkLEFBhtGRw" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='Del. Returnable Pack 9348001000: Overview' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Back (F3)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_18" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Back To Delivery Overview" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,185" sap2010:WorkflowViewState.IdRef="NClick_18" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable ContentHash="1jE7DTmtZEKbaf29ZXpmZQ" DesignTimeRectangle="264, 50, 22, 22" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[0]/btn[3]' /&gt;" Guid="6c24d0c5-6ed2-4e46-ba25-009c09bce8b0" InformativeScreenshot="14217a57cc0b510f1dac3779fcbacf8f.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/jyY8Wj_RFEWhDw0u3wtBeA" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='Change Outbound Delivery' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NClick.Target>
@@ -420,6 +447,9 @@
           <uix:TargetApp.Arguments>
             <InArgument x:TypeArguments="x:String" />
           </uix:TargetApp.Arguments>
+          <uix:TargetApp.WorkingDirectory>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.WorkingDirectory>
         </uix:TargetApp>
       </uix:NApplicationCard.TargetApp>
       <sap:WorkflowViewStateService.ViewState>
@@ -429,8 +459,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="CleanUp - Invoke Workflow File (Workflows\CleanUp.xaml)" sap:VirtualizedContainerService.HintSize="452,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Workflows\CleanUp.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Invoke Workflow - Clean Up" sap:VirtualizedContainerService.HintSize="488,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Workflows\CleanUp.xaml">
       <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_blnUploadSuccessful">[blnUploadSuccessful]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_PdfPath">[strPdfPath]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_LocalPdfPath">[strLocalPdfPath]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>

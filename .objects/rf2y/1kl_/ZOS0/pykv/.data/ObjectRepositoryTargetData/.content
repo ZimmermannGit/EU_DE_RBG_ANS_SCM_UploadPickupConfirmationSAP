@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="PkoaYiuatUCe87EC1zXhUQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="296, 76, 287, 351" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/ssubSUB110:SAPLALINK_DRAG_AND_DROP:0110/cntlSPLITTER/shellcont/shellcont/shell/shellcont[1]/shell' /&gt;" Guid="fd14846e-0e74-43b5-b23b-166235999c2e" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='Archive from Frontend' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="c064f8ee74f2c20d507f2d9b0d14ef59.jpg" xmlns="">038rKHywHwEqDlFv-WbznEw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

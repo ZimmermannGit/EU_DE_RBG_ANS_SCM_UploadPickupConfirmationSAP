@@ -1,5 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CleanUp" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uma="clr-namespace:UiPath.MicrosoftOffice365.Activities;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umaf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafe="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CleanUp" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uma="clr-namespace:UiPath.MicrosoftOffice365.Activities;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umaf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafe="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umamm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="in_blnUploadSuccessful" Type="InArgument(x:Boolean)" />
     <x:Property Name="in_PdfPath" Type="InArgument(x:String)" />
     <x:Property Name="in_LocalPdfPath" Type="InArgument(x:String)" />
   </x:Members>
@@ -59,6 +60,9 @@
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>UiPath.MicrosoftOffice365</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -125,99 +129,239 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CleanUp" sap:VirtualizedContainerService.HintSize="937,816" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CleanUp" sap:VirtualizedContainerService.HintSize="937,2337" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" ImpersonatedUserEmailAddress="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" SecurePassword="{x:Null}" Timeout="{x:Null}" Username="{x:Null}" Account="uidt0706@automotive-wan.com" ApplicationId="7e5fd973-0a88-4a06-bdd3-bc2bd2e31151" AuthenticationType="InteractiveToken" ConfigLocation="PropertiesPanel" DataStoreLocation="ORCHESTRATOR" DisplayName="Microsoft 365 Scope" EmailAddress="uidt0706@automotive-wan.com" Environment="Global" Folder="SCM" sap:VirtualizedContainerService.HintSize="452,689" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="Custom" RuntimeItemInputMode="Browse" TenantId="3bd97919-57c3-48d3-9e9a-8e4c01614a8f" UseConnectionService="False">
-      <uma:Office365ApplicationScope.AuthenticationScopes>
-        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-          <InArgument x:TypeArguments="x:String">Sites.Read.All</InArgument>
-        </scg:List>
-      </uma:Office365ApplicationScope.AuthenticationScopes>
-      <uma:Office365ApplicationScope.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="ParentScope" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,453" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="sharePointFile" />
-            </Sequence.Variables>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <umaf:GetFileFolderConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID0}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" AuthScopesInvalid="False" ConnectionId="ffa79db2-a7d3-440c-a7e6-86e2995917aa" DisplayName="Get File - Resolve Upload PDF" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="GetFileFolderConnections_2" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[in_PdfPath]" Result="[sharePointFile]" UseConnectionService="False">
-              <umaf:GetFileFolderConnections.DriveItemArgument>
-                <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" FullPathHint="" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[in_PdfPath]" ParentFullPathHint="">
-                  <umafm:DriveItemArgument.ItemIdBackup>
-                    <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID0" StoredValue="ItemUrl">
-                      <usau:BackupSlot.BackupValues>
-                        <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="6">
-                          <x:Null />
-                          <x:Null />
-                          <x:Null />
-                          <x:Null />
-                          <x:Null />
-                          <x:Null />
-                        </scg:List>
-                        <scg:List x:TypeArguments="x:Object" x:Key="ItemId" Capacity="3">
-                          <InArgument x:TypeArguments="x:String" />
-                          <InArgument x:TypeArguments="x:String" />
-                          <InArgument x:TypeArguments="x:String" />
-                        </scg:List>
-                      </usau:BackupSlot.BackupValues>
-                    </usau:BackupSlot>
-                  </umafm:DriveItemArgument.ItemIdBackup>
-                </umafm:DriveItemArgument>
-              </umaf:GetFileFolderConnections.DriveItemArgument>
-            </umaf:GetFileFolderConnections>
-            <umaf:MoveItemConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID1}" ItemIdBackup="{x:Reference __ReferenceID2}" ManualEntryDriveName="{x:Null}" ManualEntryFolderDriveName="{x:Null}" ManualEntryFolderId="{x:Null}" ManualEntryFolderSiteUrl="{x:Null}" ManualEntryFolderUrl="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" BrowserFolderDriveId="b!ezEvtoZGWUWwI34qNzAUvpN2s4EmKeJPkXVh_kTZ7lIq9lbEJy_fRqmRrfNOybMP" BrowserFolderDriveName="OneDrive - aumovio" BrowserFolderFriendlyName="05_Done_Upload" BrowserFolderId="017JD3NELBSCV6SC7YENF2XQBWB6OKVE6L" BrowserFolderSiteUrl="https://aumovio-my.sharepoint.com/personal/uidt0706_automotive-wan_com/Documents/03_Controlling%20Container%20Supplier%20+%20Customer/ZZ_weitere_Themen/RPA/AU_EU_DE_SCM_UPLOAD_PICKUP_CONFIRMATION/05_Done_Upload" ConflictResolution="[UiPath.MicrosoftOffice365.Enums.ConflictBehavior.Rename]" DisplayName="Move File or Folder" FolderSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="416,270" sap2010:WorkflowViewState.IdRef="MoveItemConnections_1" Item="[sharePointFile]" ItemSelectionMode="UseExisting" NewName="[String.Format(&quot;{0}_{1}{2}&quot;,&#xD;&#xA;    Now.ToString(&quot;yyyy_MM_dd_HH_mm_ss&quot;),&#xD;&#xA;    sharePointFile.Name,&#xD;&#xA;    &quot;.pdf&quot;)]" UseConnectionService="False">
-              <umaf:MoveItemConnections.DriveItemArgument>
-                <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" FullPathHint="" Item="[sharePointFile]" ItemSelectionMode="UseExisting" ParentFullPathHint="">
-                  <umafm:DriveItemArgument.ItemIdBackup>
-                    <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID2" StoredValue="UseExisting">
-                      <usau:BackupSlot.BackupValues>
-                        <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="6">
-                          <x:Null />
-                          <x:Null />
-                          <x:Null />
-                          <x:Null />
-                          <x:Null />
-                          <x:Null />
-                        </scg:List>
-                      </usau:BackupSlot.BackupValues>
-                    </usau:BackupSlot>
-                  </umafm:DriveItemArgument.ItemIdBackup>
-                </umafm:DriveItemArgument>
-              </umaf:MoveItemConnections.DriveItemArgument>
-              <umaf:MoveItemConnections.FolderArgument>
-                <umafm:DriveItemArgument BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" ConnectionDescriptor="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" BrowserDriveId="b!ezEvtoZGWUWwI34qNzAUvpN2s4EmKeJPkXVh_kTZ7lIq9lbEJy_fRqmRrfNOybMP" BrowserDriveName="OneDrive - aumovio" BrowserItemFriendlyName="05_Done_Upload" BrowserItemId="017JD3NELBSCV6SC7YENF2XQBWB6OKVE6L" BrowserSiteUrl="https://aumovio-my.sharepoint.com/personal/uidt0706_automotive-wan_com/Documents/03_Controlling%20Container%20Supplier%20+%20Customer/ZZ_weitere_Themen/RPA/AU_EU_DE_SCM_UPLOAD_PICKUP_CONFIRMATION/05_Done_Upload" BrowserSpecificUrl="https://aumovio-my.sharepoint.com/personal/uidt0706_automotive-wan_com/Documents/03_Controlling%20Container%20Supplier%20+%20Customer/ZZ_weitere_Themen/RPA/AU_EU_DE_SCM_UPLOAD_PICKUP_CONFIRMATION/05_Done_Upload" ConnectionKey="eyJBY2NvdW50IjoidWlkdDA3MDZAYXV0b21vdGl2ZS13YW4uY29tIiwiT0F1dGhBcHBEYXRhIjp7IkFwcGxpY2F0aW9uSWQiOiI3ZTVmZDk3My0wYTg4LTRhMDYtYmRkMy1iYzJiZDJlMzExNTEiLCJUZW5hbnRJZCI6IjNiZDk3OTE5LTU3YzMtNDhkMy05ZTlhLThlNGMwMTYxNGE4ZiJ9LCJDbGllbnRTZWNyZXQiOm51bGwsIlBhc3N3b3JkIjpudWxsLCJVc2VyTmFtZSI6InVpZHQwNzA2QGF1dG9tb3RpdmUtd2FuLmNvbSIsIkNlcnRpZmljYXRlQXNCYXNlNjQiOm51bGwsIkNlcnRpZmljYXRlUGFzc3dvcmQiOm51bGwsIkVudmlyb25tZW50IjoxLCJNb2RlIjowLCJTY29wZXMiOlsiU2l0ZXMuUmVhZC5BbGwiXSwiVGltZW91dE1zIjo2MDAwMCwiVXNlQnJva2VyIjpudWxsLCJFbWFpbEFkZHJlc3MiOiJ1aWR0MDcwNkBhdXRvbW90aXZlLXdhbi5jb20iLCJDb25uZWN0aW9uU2VydmljZURhdGEiOnsiQ29ubmVjdGlvbkFjY291bnROYW1lIjpudWxsLCJDb25uZWN0aW9uSWQiOm51bGwsIkNvbm5lY3RvciI6bnVsbH0sIlN0b3JlS2V5IjoiT1JDSEVTVFJBVE9SOlNDTVxcbWljcm9zb2Z0MzY1X3Njb3Blc19vcmNoZXN0cmF0b3Jfc3RvcmFnZV90b2tlbnMiLCJTdG9yYWdlIjp7IkZpbGVQYXRoIjoiU0NNXFxtaWNyb3NvZnQzNjVfc2NvcGVzX29yY2hlc3RyYXRvcl9zdG9yYWdlX3Rva2VucyIsIkxvY2F0aW9uIjoxfX0=" FullPathHint="One Drive/03_Controlling Container Supplier + Customer/ZZ_weitere_Themen/RPA/AU_EU_DE_SCM_UPLOAD_PICKUP_CONFIRMATION/05_Done_Upload" ItemSelectionMode="Browse" ParentFullPathHint="">
-                  <umafm:DriveItemArgument.ItemIdBackup>
-                    <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID1" StoredValue="Browse">
-                      <usau:BackupSlot.BackupValues>
-                        <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
-                      </usau:BackupSlot.BackupValues>
-                    </usau:BackupSlot>
-                  </umafm:DriveItemArgument.ItemIdBackup>
-                </umafm:DriveItemArgument>
-              </umaf:MoveItemConnections.FolderArgument>
-            </umaf:MoveItemConnections>
-          </Sequence>
-        </ActivityAction>
-      </uma:Office365ApplicationScope.Body>
-      <uma:Office365ApplicationScope.RuntimeItemFullPathBackup>
-        <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" StoredValue="{x:Null}">
-          <usau:BackupSlot.BackupValues>
-            <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
-          </usau:BackupSlot.BackupValues>
-        </usau:BackupSlot>
-      </uma:Office365ApplicationScope.RuntimeItemFullPathBackup>
-    </uma:Office365ApplicationScope>
-    <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="452,104" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[in_LocalPdfPath]" />
+    <If Condition="[in_blnUploadSuccessful]" DisplayName="If - Upload Successful" sap:VirtualizedContainerService.HintSize="488,2314" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,853" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" ImpersonatedUserEmailAddress="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" SecurePassword="{x:Null}" Timeout="{x:Null}" Username="{x:Null}" Account="uidt0706@automotive-wan.com" ApplicationId="7e5fd973-0a88-4a06-bdd3-bc2bd2e31151" AuthenticationType="InteractiveToken" ConfigLocation="PropertiesPanel" DataStoreLocation="ORCHESTRATOR" DisplayName="Microsoft 365 Scope" EmailAddress="uidt0706@automotive-wan.com" Environment="Global" Folder="SCM" sap:VirtualizedContainerService.HintSize="452,689" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="Custom" RuntimeItemInputMode="Browse" TenantId="3bd97919-57c3-48d3-9e9a-8e4c01614a8f" UseConnectionService="False">
+            <uma:Office365ApplicationScope.AuthenticationScopes>
+              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                <InArgument x:TypeArguments="x:String">Sites.Read.All</InArgument>
+              </scg:List>
+            </uma:Office365ApplicationScope.AuthenticationScopes>
+            <uma:Office365ApplicationScope.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="ParentScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,453" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="sharePointFile" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <umaf:GetFileFolderConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID0}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" AuthScopesInvalid="False" ConnectionId="ffa79db2-a7d3-440c-a7e6-86e2995917aa" DisplayName="Get File - Resolve Upload PDF" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="GetFileFolderConnections_2" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[in_PdfPath]" Result="[sharePointFile]" UseConnectionService="False">
+                    <umaf:GetFileFolderConnections.DriveItemArgument>
+                      <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" FullPathHint="" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[in_PdfPath]" ParentFullPathHint="">
+                        <umafm:DriveItemArgument.ItemIdBackup>
+                          <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID0" StoredValue="ItemUrl">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="6">
+                                <x:Null />
+                                <x:Null />
+                                <x:Null />
+                                <x:Null />
+                                <x:Null />
+                                <x:Null />
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:Object" x:Key="ItemId" Capacity="3">
+                                <InArgument x:TypeArguments="x:String" />
+                                <InArgument x:TypeArguments="x:String" />
+                                <InArgument x:TypeArguments="x:String" />
+                              </scg:List>
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </umafm:DriveItemArgument.ItemIdBackup>
+                      </umafm:DriveItemArgument>
+                    </umaf:GetFileFolderConnections.DriveItemArgument>
+                  </umaf:GetFileFolderConnections>
+                  <umaf:MoveItemConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID1}" ItemIdBackup="{x:Reference __ReferenceID2}" ManualEntryDriveName="{x:Null}" ManualEntryFolderDriveName="{x:Null}" ManualEntryFolderId="{x:Null}" ManualEntryFolderSiteUrl="{x:Null}" ManualEntryFolderUrl="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" BrowserFolderDriveId="b!ezEvtoZGWUWwI34qNzAUvpN2s4EmKeJPkXVh_kTZ7lIq9lbEJy_fRqmRrfNOybMP" BrowserFolderDriveName="OneDrive - aumovio" BrowserFolderFriendlyName="05_Done_Upload" BrowserFolderId="017JD3NELBSCV6SC7YENF2XQBWB6OKVE6L" BrowserFolderSiteUrl="https://aumovio-my.sharepoint.com/personal/uidt0706_automotive-wan_com/Documents/03_Controlling%20Container%20Supplier%20+%20Customer/ZZ_weitere_Themen/RPA/AU_EU_DE_SCM_UPLOAD_PICKUP_CONFIRMATION/05_Done_Upload" ConflictResolution="[UiPath.MicrosoftOffice365.Enums.ConflictBehavior.Rename]" DisplayName="Move File or Folder  PDF To Success Upload" FolderSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="416,270" sap2010:WorkflowViewState.IdRef="MoveItemConnections_1" Item="[sharePointFile]" ItemSelectionMode="UseExisting" NewName="[String.Format(&quot;{0}_{1}{2}&quot;,&#xA;    Now.ToString(&quot;yyyy_MM_dd_HH_mm_ss&quot;),&#xA;    sharePointFile.Name,&#xA;    &quot;.pdf&quot;)]" UseConnectionService="False">
+                    <umaf:MoveItemConnections.DriveItemArgument>
+                      <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" FullPathHint="" Item="[sharePointFile]" ItemSelectionMode="UseExisting" ParentFullPathHint="">
+                        <umafm:DriveItemArgument.ItemIdBackup>
+                          <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID2" StoredValue="UseExisting">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="6">
+                                <x:Null />
+                                <x:Null />
+                                <x:Null />
+                                <x:Null />
+                                <x:Null />
+                                <x:Null />
+                              </scg:List>
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </umafm:DriveItemArgument.ItemIdBackup>
+                      </umafm:DriveItemArgument>
+                    </umaf:MoveItemConnections.DriveItemArgument>
+                    <umaf:MoveItemConnections.FolderArgument>
+                      <umafm:DriveItemArgument BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" ConnectionDescriptor="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" BrowserDriveId="b!ezEvtoZGWUWwI34qNzAUvpN2s4EmKeJPkXVh_kTZ7lIq9lbEJy_fRqmRrfNOybMP" BrowserDriveName="OneDrive - aumovio" BrowserItemFriendlyName="05_Done_Upload" BrowserItemId="017JD3NELBSCV6SC7YENF2XQBWB6OKVE6L" BrowserSiteUrl="https://aumovio-my.sharepoint.com/personal/uidt0706_automotive-wan_com/Documents/03_Controlling%20Container%20Supplier%20+%20Customer/ZZ_weitere_Themen/RPA/AU_EU_DE_SCM_UPLOAD_PICKUP_CONFIRMATION/05_Done_Upload" BrowserSpecificUrl="https://aumovio-my.sharepoint.com/personal/uidt0706_automotive-wan_com/Documents/03_Controlling%20Container%20Supplier%20+%20Customer/ZZ_weitere_Themen/RPA/AU_EU_DE_SCM_UPLOAD_PICKUP_CONFIRMATION/05_Done_Upload" ConnectionKey="eyJBY2NvdW50IjoidWlkdDA3MDZAYXV0b21vdGl2ZS13YW4uY29tIiwiT0F1dGhBcHBEYXRhIjp7IkFwcGxpY2F0aW9uSWQiOiI3ZTVmZDk3My0wYTg4LTRhMDYtYmRkMy1iYzJiZDJlMzExNTEiLCJUZW5hbnRJZCI6IjNiZDk3OTE5LTU3YzMtNDhkMy05ZTlhLThlNGMwMTYxNGE4ZiJ9LCJDbGllbnRTZWNyZXQiOm51bGwsIlBhc3N3b3JkIjpudWxsLCJVc2VyTmFtZSI6InVpZHQwNzA2QGF1dG9tb3RpdmUtd2FuLmNvbSIsIkNlcnRpZmljYXRlQXNCYXNlNjQiOm51bGwsIkNlcnRpZmljYXRlUGFzc3dvcmQiOm51bGwsIkVudmlyb25tZW50IjoxLCJNb2RlIjowLCJTY29wZXMiOlsiU2l0ZXMuUmVhZC5BbGwiXSwiVGltZW91dE1zIjo2MDAwMCwiVXNlQnJva2VyIjpudWxsLCJFbWFpbEFkZHJlc3MiOiJ1aWR0MDcwNkBhdXRvbW90aXZlLXdhbi5jb20iLCJDb25uZWN0aW9uU2VydmljZURhdGEiOnsiQ29ubmVjdGlvbkFjY291bnROYW1lIjpudWxsLCJDb25uZWN0aW9uSWQiOm51bGwsIkNvbm5lY3RvciI6bnVsbH0sIlN0b3JlS2V5IjoiT1JDSEVTVFJBVE9SOlNDTVxcbWljcm9zb2Z0MzY1X3Njb3Blc19vcmNoZXN0cmF0b3Jfc3RvcmFnZV90b2tlbnMiLCJTdG9yYWdlIjp7IkZpbGVQYXRoIjoiU0NNXFxtaWNyb3NvZnQzNjVfc2NvcGVzX29yY2hlc3RyYXRvcl9zdG9yYWdlX3Rva2VucyIsIkxvY2F0aW9uIjoxfX0=" FullPathHint="One Drive/03_Controlling Container Supplier + Customer/ZZ_weitere_Themen/RPA/AU_EU_DE_SCM_UPLOAD_PICKUP_CONFIRMATION/05_Done_Upload" ItemSelectionMode="Browse" ParentFullPathHint="">
+                        <umafm:DriveItemArgument.ItemIdBackup>
+                          <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID1" StoredValue="Browse">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </umafm:DriveItemArgument.ItemIdBackup>
+                      </umafm:DriveItemArgument>
+                    </umaf:MoveItemConnections.FolderArgument>
+                  </umaf:MoveItemConnections>
+                </Sequence>
+              </ActivityAction>
+            </uma:Office365ApplicationScope.Body>
+            <uma:Office365ApplicationScope.RuntimeItemFullPathBackup>
+              <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" StoredValue="{x:Null}">
+                <usau:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                </usau:BackupSlot.BackupValues>
+              </usau:BackupSlot>
+            </uma:Office365ApplicationScope.RuntimeItemFullPathBackup>
+          </uma:Office365ApplicationScope>
+          <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="452,104" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[in_LocalPdfPath]" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,1331" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" ImpersonatedUserEmailAddress="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" SecurePassword="{x:Null}" Timeout="{x:Null}" Username="{x:Null}" Account="uidt0706@automotive-wan.com" ApplicationId="7e5fd973-0a88-4a06-bdd3-bc2bd2e31151" AuthenticationType="InteractiveToken" ConfigLocation="PropertiesPanel" DataStoreLocation="ORCHESTRATOR" DisplayName="Microsoft 365 Scope" EmailAddress="uidt0706@automotive-wan.com" Environment="Global" Folder="SCM" sap:VirtualizedContainerService.HintSize="452,1271" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_2" OAuthApplication="Custom" RuntimeItemInputMode="Browse" TenantId="3bd97919-57c3-48d3-9e9a-8e4c01614a8f" UseConnectionService="False">
+            <uma:Office365ApplicationScope.AuthenticationScopes>
+              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                <InArgument x:TypeArguments="x:String">Sites.Read.All</InArgument>
+              </scg:List>
+            </uma:Office365ApplicationScope.AuthenticationScopes>
+            <uma:Office365ApplicationScope.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="ParentScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1044" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="sharePointFile" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <umaf:GetFileFolderConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID3}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" AuthScopesInvalid="False" ConnectionId="ffa79db2-a7d3-440c-a7e6-86e2995917aa" DisplayName="Get File - Resolve Upload PDF" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="GetFileFolderConnections_3" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[in_PdfPath]" Result="[sharePointFile]" UseConnectionService="False">
+                    <umaf:GetFileFolderConnections.DriveItemArgument>
+                      <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" FullPathHint="" ItemSelectionMode="ItemUrl" ManualEntryItemUrl="[in_PdfPath]" ParentFullPathHint="">
+                        <umafm:DriveItemArgument.ItemIdBackup>
+                          <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID3" StoredValue="ItemUrl">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="6">
+                                <x:Null />
+                                <x:Null />
+                                <x:Null />
+                                <x:Null />
+                                <x:Null />
+                                <x:Null />
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:Object" x:Key="ItemId" Capacity="3">
+                                <InArgument x:TypeArguments="x:String" />
+                                <InArgument x:TypeArguments="x:String" />
+                                <InArgument x:TypeArguments="x:String" />
+                              </scg:List>
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </umafm:DriveItemArgument.ItemIdBackup>
+                      </umafm:DriveItemArgument>
+                    </umaf:GetFileFolderConnections.DriveItemArgument>
+                  </umaf:GetFileFolderConnections>
+                  <umaf:MoveItemConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID4}" ItemIdBackup="{x:Reference __ReferenceID5}" ManualEntryDriveName="{x:Null}" ManualEntryFolderDriveName="{x:Null}" ManualEntryFolderId="{x:Null}" ManualEntryFolderSiteUrl="{x:Null}" ManualEntryFolderUrl="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" BrowserFolderDriveId="b!ezEvtoZGWUWwI34qNzAUvpN2s4EmKeJPkXVh_kTZ7lIq9lbEJy_fRqmRrfNOybMP" BrowserFolderDriveName="OneDrive - aumovio" BrowserFolderFriendlyName="06_Failed_Upload" BrowserFolderId="017JD3NEN6IC4B2Z6UIRFJIC24SHZS6FY7" BrowserFolderSiteUrl="https://aumovio-my.sharepoint.com/personal/uidt0706_automotive-wan_com/Documents/03_Controlling%20Container%20Supplier%20+%20Customer/ZZ_weitere_Themen/RPA/EU_DE_RBG_ANS_SCM_UploadPickupConfirmation/06_Failed_Upload" ConflictResolution="[UiPath.MicrosoftOffice365.Enums.ConflictBehavior.Rename]" DisplayName="Move File or Folder - Move PDF To Failed Upload" FolderSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="416,279" sap2010:WorkflowViewState.IdRef="MoveItemConnections_2" Item="[sharePointFile]" ItemSelectionMode="UseExisting" NewName="[String.Format(&quot;{0}_{1}{2}&quot;,&#xA;    Now.ToString(&quot;yyyy_MM_dd_HH_mm_ss&quot;),&#xA;    sharePointFile.Name,&#xA;    &quot;.pdf&quot;)]" UseConnectionService="False">
+                    <umaf:MoveItemConnections.DriveItemArgument>
+                      <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" FullPathHint="" Item="[sharePointFile]" ItemSelectionMode="UseExisting" ParentFullPathHint="">
+                        <umafm:DriveItemArgument.ItemIdBackup>
+                          <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID5" StoredValue="UseExisting">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="6">
+                                <x:Null />
+                                <x:Null />
+                                <x:Null />
+                                <x:Null />
+                                <x:Null />
+                                <x:Null />
+                              </scg:List>
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </umafm:DriveItemArgument.ItemIdBackup>
+                      </umafm:DriveItemArgument>
+                    </umaf:MoveItemConnections.DriveItemArgument>
+                    <umaf:MoveItemConnections.FolderArgument>
+                      <umafm:DriveItemArgument BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" ConnectionDescriptor="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" ReferenceId="{x:Null}" BrowserDriveId="b!ezEvtoZGWUWwI34qNzAUvpN2s4EmKeJPkXVh_kTZ7lIq9lbEJy_fRqmRrfNOybMP" BrowserDriveName="OneDrive - aumovio" BrowserItemFriendlyName="06_Failed_Upload" BrowserItemId="017JD3NEN6IC4B2Z6UIRFJIC24SHZS6FY7" BrowserSiteUrl="https://aumovio-my.sharepoint.com/personal/uidt0706_automotive-wan_com/Documents/03_Controlling%20Container%20Supplier%20+%20Customer/ZZ_weitere_Themen/RPA/EU_DE_RBG_ANS_SCM_UploadPickupConfirmation/06_Failed_Upload" BrowserSpecificUrl="https://aumovio-my.sharepoint.com/personal/uidt0706_automotive-wan_com/Documents/03_Controlling%20Container%20Supplier%20+%20Customer/ZZ_weitere_Themen/RPA/EU_DE_RBG_ANS_SCM_UploadPickupConfirmation/06_Failed_Upload" ConnectionKey="eyJBY2NvdW50IjoidWlkdDA3MDZAYXV0b21vdGl2ZS13YW4uY29tIiwiT0F1dGhBcHBEYXRhIjp7IkFwcGxpY2F0aW9uSWQiOiI3ZTVmZDk3My0wYTg4LTRhMDYtYmRkMy1iYzJiZDJlMzExNTEiLCJUZW5hbnRJZCI6IjNiZDk3OTE5LTU3YzMtNDhkMy05ZTlhLThlNGMwMTYxNGE4ZiJ9LCJDbGllbnRTZWNyZXQiOm51bGwsIlBhc3N3b3JkIjpudWxsLCJVc2VyTmFtZSI6InVpZHQwNzA2QGF1dG9tb3RpdmUtd2FuLmNvbSIsIkNlcnRpZmljYXRlQXNCYXNlNjQiOm51bGwsIkNlcnRpZmljYXRlUGFzc3dvcmQiOm51bGwsIkVudmlyb25tZW50IjoxLCJNb2RlIjowLCJTY29wZXMiOlsiU2l0ZXMuUmVhZC5BbGwiXSwiVGltZW91dE1zIjo2MDAwMCwiVXNlQnJva2VyIjpudWxsLCJFbWFpbEFkZHJlc3MiOiJ1aWR0MDcwNkBhdXRvbW90aXZlLXdhbi5jb20iLCJDb25uZWN0aW9uU2VydmljZURhdGEiOnsiQ29ubmVjdGlvbkFjY291bnROYW1lIjpudWxsLCJDb25uZWN0aW9uSWQiOm51bGwsIkNvbm5lY3RvciI6bnVsbH0sIlN0b3JlS2V5IjoiT1JDSEVTVFJBVE9SOlNDTVxcbWljcm9zb2Z0MzY1X3Njb3Blc19vcmNoZXN0cmF0b3Jfc3RvcmFnZV90b2tlbnMiLCJTdG9yYWdlIjp7IkZpbGVQYXRoIjoiU0NNXFxtaWNyb3NvZnQzNjVfc2NvcGVzX29yY2hlc3RyYXRvcl9zdG9yYWdlX3Rva2VucyIsIkxvY2F0aW9uIjoxfX0=" FullPathHint="One Drive/03_Controlling Container Supplier + Customer/ZZ_weitere_Themen/RPA/EU_DE_RBG_ANS_SCM_UploadPickupConfirmation/06_Failed_Upload" ItemSelectionMode="Browse" ParentFullPathHint="">
+                        <umafm:DriveItemArgument.ItemIdBackup>
+                          <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID4" StoredValue="Browse">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </umafm:DriveItemArgument.ItemIdBackup>
+                      </umafm:DriveItemArgument>
+                    </umaf:MoveItemConnections.FolderArgument>
+                  </umaf:MoveItemConnections>
+                  <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="416,113" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="[in_LocalPdfPath]" />
+                  <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID6}" ReplyTo="{x:Null}" SensitivityLabelId="{x:Null}" Subject="{x:Null}" TextBody="{x:Null}" To="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,469" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="Normal" InputType="HTML" IsDeliveryReceiptRequested="False" IsReadReceiptRequested="False" SaveAsDraft="True" UseConnectionService="False" UseSharedMailbox="False">
+                    <umam:SendMailConnections.AttachmentsBackup>
+                      <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
+                        <usau:BackupSlot.BackupValues>
+                          <scg:Dictionary x:TypeArguments="umame:AttachmentInputMode, scg:List(x:Object)" />
+                        </usau:BackupSlot.BackupValues>
+                      </usau:BackupSlot>
+                    </umam:SendMailConnections.AttachmentsBackup>
+                    <umam:SendMailConnections.InputTypeBackup>
+                      <usau:BackupSlot x:TypeArguments="umame:BodyInputType" StoredValue="HTML">
+                        <usau:BackupSlot.BackupValues>
+                          <scg:Dictionary x:TypeArguments="umame:BodyInputType, scg:List(x:Object)" />
+                        </usau:BackupSlot.BackupValues>
+                      </usau:BackupSlot>
+                    </umam:SendMailConnections.InputTypeBackup>
+                    <umam:SendMailConnections.MailboxArg>
+                      <umamm:MailboxArgument SharedMailbox="{x:Null}" UseSharedMailbox="False">
+                        <umamm:MailboxArgument.Backup>
+                          <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" x:Name="__ReferenceID6" StoredValue="NoMailbox">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:List x:TypeArguments="x:Object" x:Key="NoMailbox" Capacity="1">
+                                <x:Null />
+                              </scg:List>
+                              <scg:List x:TypeArguments="x:Object" x:Key="UseMailbox" Capacity="1">
+                                <x:Null />
+                              </scg:List>
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </umamm:MailboxArgument.Backup>
+                      </umamm:MailboxArgument>
+                    </umam:SendMailConnections.MailboxArg>
+                  </umam:SendMailConnections>
+                </Sequence>
+              </ActivityAction>
+            </uma:Office365ApplicationScope.Body>
+            <uma:Office365ApplicationScope.RuntimeItemFullPathBackup>
+              <usau:BackupSlot x:TypeArguments="umafe:EDriveItemMode" StoredValue="{x:Null}">
+                <usau:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                </usau:BackupSlot.BackupValues>
+              </usau:BackupSlot>
+            </uma:Office365ApplicationScope.RuntimeItemFullPathBackup>
+          </uma:Office365ApplicationScope>
+        </Sequence>
+      </If.Else>
+    </If>
   </Sequence>
 </Activity>
