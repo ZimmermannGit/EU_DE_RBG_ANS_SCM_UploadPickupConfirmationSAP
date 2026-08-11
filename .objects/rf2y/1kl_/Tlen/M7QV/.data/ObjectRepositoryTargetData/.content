@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="mbQ5e4xEAUu619Yu5jnZvQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="0, 0, 735, 566" ElementVisibilityArgument="Interactive" Guid="d3a2dcec-e24d-4893-8f56-bd98c2529d4d" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='SAP Logon Pad 800' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="030b3e08dcfac9f9d1ab17d675967bdf.jpg" xmlns="">0To0_u8HRGEa2xdL-IY8FzQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

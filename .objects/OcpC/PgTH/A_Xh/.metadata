@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Snipping Tool",
+  "Type": "Screen",
+  "Id": "A_XhuMMdwkWNTepp8A5QRg",
+  "Reference": "fJM94VxrM0ieI8fVNIPlpA/A_XhuMMdwkWNTepp8A5QRg",
+  "ParentRef": "fJM94VxrM0ieI8fVNIPlpA/PgTHZi5XPk-WilrtvnqvLQ",
+  "Created": "2026-07-07T10:59:23.562217Z",
+  "Updated": "2026-07-07T10:59:23.562217Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

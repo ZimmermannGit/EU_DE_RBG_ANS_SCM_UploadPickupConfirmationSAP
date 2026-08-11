@@ -1,0 +1,16 @@
+{
+  "Tags": [
+    {
+      "Key": "PDF"
+    },
+    {
+      "Key": "Split"
+    },
+    {
+      "Key": "SAP"
+    }
+  ],
+  "SeparateRuntimeDependencies": false,
+  "IncludeSources": true,
+  "ConnectorKeys": []
+}

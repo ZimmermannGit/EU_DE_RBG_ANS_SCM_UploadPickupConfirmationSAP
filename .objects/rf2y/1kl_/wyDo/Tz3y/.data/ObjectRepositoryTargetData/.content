@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="2oMvL0uYakuv5asT4IifWg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="58, 115, 100, 17" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/ssubSUB110:SAPLALINK_DRAG_AND_DROP:0110/cntlSPLITTER/shellcont/shellcont/shell/shellcont[0]/shell' relpath='Outbound Delivery/Attachment - pdf' /&gt;&lt;sap itemId='HITLIST' /&gt;" Guid="03ae32bd-aa1f-48fe-ae80-aaeae3a3de12" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='Archive from Frontend' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="77078a569ebd75c652effca6ced50cc7.jpg" xmlns="">0FWvbcVtuD0WVTs0j6R2Rsg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

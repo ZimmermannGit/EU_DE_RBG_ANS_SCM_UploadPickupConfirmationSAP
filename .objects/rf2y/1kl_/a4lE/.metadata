@@ -1,0 +1,16 @@
+﻿{
+  "Name": "VL02N",
+  "Type": "Screen",
+  "Id": "a4lEWLkvY0Gm031Yr3nk4g",
+  "Reference": "fJM94VxrM0ieI8fVNIPlpA/a4lEWLkvY0Gm031Yr3nk4g",
+  "ParentRef": "fJM94VxrM0ieI8fVNIPlpA/1kl_DlEVwEuQMoz9XqfEqg",
+  "Created": "2026-07-17T06:48:08.6258926Z",
+  "Updated": "2026-07-17T06:49:22.7396414Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.32.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

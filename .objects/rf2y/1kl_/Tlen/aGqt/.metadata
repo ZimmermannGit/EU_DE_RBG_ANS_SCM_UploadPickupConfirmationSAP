@@ -1,0 +1,13 @@
+﻿{
+  "Name": "EQ1- QAS- AUTO- EURO- G…",
+  "Type": "Element",
+  "Id": "aGqtGE_XHkKetHhyrRV_pQ",
+  "Reference": "fJM94VxrM0ieI8fVNIPlpA/aGqtGE_XHkKetHhyrRV_pQ",
+  "ParentRef": "fJM94VxrM0ieI8fVNIPlpA/TlenLX9K1k6B6srgvYRGsA",
+  "Created": "2026-07-09T10:46:15.9917601Z",
+  "Updated": "2026-07-09T10:46:15.9917601Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.32.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

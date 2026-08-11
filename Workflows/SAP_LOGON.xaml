@@ -1,0 +1,1067 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:a="clr-namespace:AU_WW_ComplianceLibrary;assembly=AU_WW_ComplianceLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_str_SAPSystem" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_SAPMandant" Type="InArgument(x:String)" />
+    <x:Property Name="in_bool_logging" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_SAP_Credentials_Assets" Type="InArgument(s:String[])" />
+    <x:Property Name="bool_Terminate_Login" Type="InArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1690,40934</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="90">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.Core.Activities.SAP</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>Continental.Dummies.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Core.Activities.UiTree</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.Activities.System.Arrays</x:String>
+      <x:String>UiPath.Activities.System.Collections</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>AU_WW_ComplianceLibrary</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>UiPath.Shared.Telemetry</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="122">
+      <AssemblyReference>AU_WW_ComplianceLibrary</AssemblyReference>
+      <AssemblyReference>AU_WW_ComplianceLibrary.Core</AssemblyReference>
+      <AssemblyReference>Continental.Dummies.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Text.Encoding.CodePages</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="944,18530" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_SAPSystem" />
+      <Variable x:TypeArguments="x:String" Name="str_SAPMandant" />
+      <Variable x:TypeArguments="x:String" Name="sec_SAPUsername" />
+      <Variable x:TypeArguments="ss:SecureString" Name="sec_SAPPWD" />
+      <Variable x:TypeArguments="x:Boolean" Name="has_logging_enabled" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <a:AU_BasicComplianceActivity sap:VirtualizedContainerService.HintSize="664,57" sap2010:WorkflowViewState.IdRef="AU_BasicComplianceActivity_1" />
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="664,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Boolean">[has_logging_enabled]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Boolean">[in_bool_logging]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Opens the SAP Logon Window to select System and trying to connecto to it" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Application: SAP Logon Window" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="664,18301" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="ca90d834-d3d3-4717-b466-24f1b3513e09" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence sap2010:Annotation.AnnotationText="This is only for the Logon process" DisplayName="Steps to Logon into the sap system" sap:VirtualizedContainerService.HintSize="662,18024" sap2010:WorkflowViewState.IdRef="Sequence_20">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Default="0" Name="str_current_index" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState sap2010:Annotation.AnnotationText="Sometimes SAP GUI Doesnt have a View Dropdown, in that case ware basically helpless and can only hope that the right view is selected" DisplayName="Check App if SAP GUI has View Dropdown" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="628,2321" sap2010:WorkflowViewState.IdRef="NCheckState_18" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Timeout="10" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence sap2010:Annotation.AnnotationText="If the Dropdown is available select List view To see all SAP Systems" DisplayName="Target View Dropdown appears" sap:VirtualizedContainerService.HintSize="486,1380" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[has_logging_enabled]" DisplayName="Only Log Message if logging is enabled" sap:VirtualizedContainerService.HintSize="452,455" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_79">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_58" Level="Info" Message="[Datetime.now.ToString + &quot;: SAP GUI Window View Dropdown Found: OK selecting List View...&quot;]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_161">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Workspace View'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="798, 43, 185, 29" DesignTimeScaleFactor="1" ElementType="DropDown" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd ctrlid='1109' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1109' /&gt;" Guid="46ec1062-120c-4494-8c70-e9bc8dd407fb" InformativeScreenshot="0c5ad5cffba333d4f7730aeef311e7a4.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='SAP Logon*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'List View'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="1, 75, 183, 37" DesignTimeScaleFactor="1" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='List View' role='list item' /&gt;" FuzzySelectorArgument="&lt;ctrl name='List View' role='list item' automationid='' check:text='List View' /&gt;" Guid="bed19a9d-3bc6-48ef-80dd-e6207e38016a" InformativeScreenshot="1bcf083cfd9544c01659810d1731748b.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='ComboLBox' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <If Condition="[has_logging_enabled]" DisplayName="Only Log Message if logging is enabled" sap:VirtualizedContainerService.HintSize="452,446" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_82">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_59" Level="Info" Message="[Datetime.now.ToString + &quot;: SAP GUI Window the correct View should now be selected: OK&quot;]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_162">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence sap2010:Annotation.AnnotationText="If the Dropdown is not available we assume that List view is selected and proceed" DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="486,551" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[has_logging_enabled]" DisplayName="Only Log Message if logging is enabled" sap:VirtualizedContainerService.HintSize="452,446" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_81">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_60" Level="Trace" Message="[Datetime.now.ToString + &quot;: SAP GUI Window View Dropdown NOT Found: OK (We assume the system can be found anyway)&quot;]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_160">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="798, 43, 185, 29" DesignTimeScaleFactor="1" ElementType="DropDown" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd ctrlid='1109' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1109' check:text='*View' /&gt;" Guid="2140b6f7-61b0-4ba0-8d60-201c9fc02344" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAL0AAAAhCAYAAACMc6oIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ8SURBVHhe7Zk7buNADIZT5jwuUgTILVIJMFK7Tm8I6bZ0u5UR9wvkCHKXM6SRbpAbcMl5SJzRw0K8Albm/wEDaJ5M8Q1FOXcEgDEgPTBHK/2vw280tJtukUR6AG4VSA/MAemBOSA9MAekB+aA9MAckB6YA9IDc/xQ+oaO20cq3pvQ1/Bc+UbV0NQs/Nmb8hz6KVXJc9sT1VfHAVb599I3JyoeHmlfhf4gfv/omuqNNg8sdOh2nGkfz54VB4A+C2T6OVyQXsutGb0MAMxnAelF2Bc6uileV76wqFyScCu4ZHFlCe+NY75U6ePKmKzEScd0HCGNtdnG0ie/YCG+jovLtC4+K9r9+Q6dKRraHRr6Cr3IstKLTCKfGxcp4/NIJtf0RMz3ZJdLRHaXyverd74AQexanrPLUmy7C5POg/+fbzq8HulpUnwW/vWDdp+hq1heen7ec8pNs/kM6UOMdo27QPqtkMfJM7WKoffKMwsubw1/dhYHrIQp8ceFF5aVnqmrE+0lC7OARRmlnSN9moFF0jReLn0oa7LmY3Rr23OC/P6DGKXNOhkSf1p4YXHpO/SeedK3QjZDZ+bST4vrM/uZ/4awR87m7F9F+cFK0eJfFl64UnquoRsuXWJzc6mMbo0b5z1ttg7S83OdiJwT4rCo/Q9efRH8OpE3rqkltt4jcvM53Zjskf7Y5QXrwYt//3xZeOEq6XvlhMuYSkbO0CJWnO/KG8m8Ybwnc4bL4kNvBS29IJeqiyUf0Ef9n6vwu77O6u7XoOQMYIEfSg/AeoH0wByQHpgD0gNzQHpgDkgPzAHpgTkgPTAHpAfmGJUeDe2WW6SVHgArQHpgDKK/mmiHCkdbzHsAAAAASUVORK5CYII=" InformativeScreenshot="243822525ac6af1dca19d2688fc4eeed.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='SAP Logon*' /&gt;" SearchSteps="FuzzySelector" Version="V1">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="798, 98, 185, 26" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlid='1091' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1091' /&gt;" Guid="d4322daa-3252-4921-862b-b0b357c70001" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAL0AAAAeCAYAAAB5Xx9wAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJzSURBVHhe7ZhNjsIwDEbn0EhI3GAWSLCdPSqHQHAI4BDhAiwzdv5wHApqGEa0+Z5kqSWtQ8Vz4vJ1vV4tAtFSQHpEc5Gk/17/IBCTjrvSAzBVID1oDkgPmgPSg+aA9KA5KqU/2818YWc6VgdrwviuO9gjH5qDXc63/vhtXOxutbDL/SWcA9BPnfRO5LXdmYs1MsKwPcVxPt6KYmC4YMLYn+GLcHMKp2+ZA0yFOukLkfsx+7WddedwRrxj5dc5/2V3AWOlSvpCZMWxi62Gaju4WEQ75FdmuqajfOGzJbVFsph8roPdUJ6+QnPfJ45Vz8EtWbhmRQVDO9cx3bMWuwjPt6WiCnPQtbsT2qoxUSG9FzkKlCIJ6ce9JLrtkAXBhFxUQPLeW0GF8yCWuWc8wTllEVbPwRcY+s587kT3hevyx+cLu0hsnQwV2VLMDT6fCumjyD39vOynizbDC5aKwK3Kqg3JWqeyaEp8Ti15/Rw6H6/stOJHsd0z0fU0fntmMCaGS+9+9AcviVKyTC5C3etWUBKoiEwwJWyBknboHEVRlIWW7xwEzeF3A/qc8kD+cTFc+nsrp0D210Xvr+4tZFJkvXofughfnaMoNLVzSLgVYvEf5Aefx2Dpn4koJXPHYiWM9/JLYjpnwcIF5sQr6C33M2EdSvKX5+B88vmyoiLJsxdXevntKwjwsQyWniXJVu+MfFX0wuWthP/XQ7QfdE36J4Q+9y+PzIMVVhAlT5K+OEfxfKoI3ItrypUXNRgHg6UHYOxAetAckB40B6QHzQHpQXNAetAckB40B6QHzQHpQXP0So9ATDkK6RGIVgLSIxqLq/0FZFqmWZb+Kp4AAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <uix:NCheckState sap2010:Annotation.AnnotationText="Checks if SAP GUI is found, done by checking the Filter for system field" DisplayName="Check App State SAP GUI" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="628,1166" sap2010:WorkflowViewState.IdRef="NCheckState_16" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Timeout="10" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="486,441" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[has_logging_enabled]" DisplayName="Only Log Message if logging is enabled" sap:VirtualizedContainerService.HintSize="452,381" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_83">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_53" Level="Info" Message="[Datetime.now.ToString + &quot;: SAP GUI Window found: OK&quot;]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_118">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="486,349" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="ui:Image" Name="binary_Screenshot" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_54" Level="Info" Message="[Datetime.now.ToString + &quot;: SAP GUI Window found: FAIL&quot;]" />
+                  <Throw Exception="[new Exception(&quot;SAP GUI not found&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="701, 40, 80, 20" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd ctrlid='1091' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1091' /&gt;" Guid="118e034e-073e-41c3-8552-80b5e181294c" InformativeScreenshot="e8bf228992605be6f0a4d54c88da7b39.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='SAP Logon*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="661, 35, 40, 31" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='32797' title='Filter:' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='32797' title='Filter:' check:text='unchecked' /&gt;" Guid="da22f15e-c934-431b-8e3d-bcd46b56e378" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <If Condition="[has_logging_enabled]" DisplayName="Only Log Message if logging is enabled" sap:VirtualizedContainerService.HintSize="628,455" sap2010:WorkflowViewState.IdRef="If_6">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_84">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_57" Level="Info" Message="[Datetime.now.ToString + &quot;: Variable for SAP System is: &quot; + in_str_SAPSystem]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_119">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Uses the Variable" DelayBefore="1" DisplayName="Type the System Filter field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="628,277" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Text="[in_str_SAPSystem]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="526, 43, 185, 26" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd ctrlid='1091' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1091' /&gt;" Guid="eb8ae6d2-d2ca-49d5-a11c-1576374325d8" InformativeScreenshot="0f249858801652e885a91673054a5f7f.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='SAP Logon*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" />
+              </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <uix:NCheckState sap2010:Annotation.AnnotationText="This is to verfy if the SAP System has been found or not, throw if not found" DisplayName="Check App if SAP System is correctly selected" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="628,1231" sap2010:WorkflowViewState.IdRef="NCheckState_17" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Timeout="10" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="486,506" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[has_logging_enabled]" DisplayName="Only Log Message if logging is enabled" sap:VirtualizedContainerService.HintSize="452,446" sap2010:WorkflowViewState.IdRef="If_7">
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_85">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_55" Level="Trace" Message="[Datetime.now.ToString + &quot;: SAP GUI correct SAP System found in List: OK&quot;]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_120">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="486,349" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_56" Level="Info" Message="[Datetime.now.ToString + &quot;: SAP GUI correct SAP System found in List: FAIL&quot;]" />
+                  <Throw Exception="[new Exception(&quot;SAP SYSTEM not found&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="12, 111, 1085, 24" DesignTimeScaleFactor="1" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;wnd ctrlid='1008' /&gt;&lt;ctrl name='{0}*' role='list item' /&gt;&quot;, in_str_SAPSystem)]" FuzzySelectorArgument="[string.Format(&quot;&lt;wnd ctrlid='1008' /&gt;&lt;ctrl name='{0}*' role='list item' automationid='' check:text='{{str_SAPSystem}}*' /&gt;&quot;, in_str_SAPSystem)]" Guid="46561587-2d71-4bdd-9f05-d7985f23ad1c" ImageBase64="" InformativeScreenshot="9b45795cc461d23faaa6a4049c51ea63.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='SAP Logon*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" />
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[str_current_index]" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="628,10513" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_SAP_Credentials_Assets]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:String">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="626,10382" sap2010:WorkflowViewState.IdRef="Sequence_163">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="AU_EU_DE_SCM_UPLOAD_PICKUP_CONFIRMATION_SAP_User01" CacheStrategy="None" DisplayName="Get Credential" FolderPath="AUTO/AN/Regensburg/SCM" sap:VirtualizedContainerService.HintSize="592,176" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[sec_SAPPWD]" Username="[sec_SAPUsername]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="592,175" sap2010:WorkflowViewState.IdRef="LogMessage_69" Message="[&quot;Login Asset is: &quot; + currentText]" />
+                    <Sequence DisplayName="Do SNC Login" sap:VirtualizedContainerService.HintSize="592,6768" sap2010:WorkflowViewState.IdRef="Sequence_164">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="SAP Logon 800" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="558,3020" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="2ec94e90-f11a-47d4-bb9a-63c7d9870e01" Version="V2">
+                        <uix:NApplicationCard.Body>
+                          <ActivityAction x:TypeArguments="x:Object">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="556,2765" sap2010:WorkflowViewState.IdRef="Sequence_107">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="522,57" sap2010:WorkflowViewState.IdRef="MaximizeWindow_7" />
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click SAP System Entry" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="522,364" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Right" ScopeIdentifier="2ec94e90-f11a-47d4-bb9a-63c7d9870e01" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable DesignTimeRectangle="15, 85, 2735, 18" DesignTimeScaleFactor="1" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;wnd ctrlid='1008' /&gt;&lt;ctrl name='{0}' role='list item' /&gt;&quot;, in_str_SAPSystem)]" FuzzySelectorArgument="[string.Format(&quot;&lt;wnd ctrlid='1008' /&gt;&lt;ctrl name='{0}' role='list item' automationid='' check:text='{0}' /&gt;&quot;, in_str_SAPSystem)]" Guid="189936d7-167e-40c2-8101-471f14f6597a" ImageBase64="" InformativeScreenshot="fd5925bac84bb12d973e3fc186a18219.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='SAP Logon Pad*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target DesignTimeRectangle="15, 35, 50, 31" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='1068' title='&amp;amp;Log On' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1068' title='&amp;amp;Log On' check:text='unchecked' /&gt;" Guid="fbf43f22-80d5-4291-b207-cc16170b458e" SearchSteps="Selector, FuzzySelector" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                              </uix:NClick>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SNC Logon'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="522,245" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2ec94e90-f11a-47d4-bb9a-63c7d9870e01" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable DesignTimeRectangle="3, 25, 403, 22" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Context' role='popup menu' /&gt;&lt;ctrl automationid='32805' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Context' role='popup menu' /&gt;&lt;ctrl automationid='32805' role='menu item' check:text='SNC Logon Without Single Sign-On&amp;#x9;Shift+Enter' /&gt;" Guid="ea5ac032-84cd-4fe6-aee5-aaf4631a37ff" InformativeScreenshot="a52030b6fecd375f2bb1e75dd19e62d0.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32768' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <uix:NCheckState DisplayName="Check App State 'SAP GUI for Windows'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="522,2039" sap2010:WorkflowViewState.IdRef="NCheckState_23" IsLoose="True" Mode="WaitDisappear" Timeout="20" Version="V5">
+                                <uix:NCheckState.IfExists>
+                                  <Sequence DisplayName="Target disappears" sap:VirtualizedContainerService.HintSize="520,90" sap2010:WorkflowViewState.IdRef="Sequence_175">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </uix:NCheckState.IfExists>
+                                <uix:NCheckState.IfNotExists>
+                                  <Sequence DisplayName="Target does not disappear" sap:VirtualizedContainerService.HintSize="520,1613" sap2010:WorkflowViewState.IdRef="Sequence_176">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,427" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_17" InteractionMode="HardwareEvents" ScopeIdentifier="2ec94e90-f11a-47d4-bb9a-63c7d9870e01" Shortcuts="[d(hk)][k(Esc)][u(hk)]" Version="V5">
+                                      <uix:NKeyboardShortcuts.VerifyOptions>
+                                        <uix:VerifyExecutionOptions Mode="Appears">
+                                          <uix:VerifyExecutionOptions.Retry>
+                                            <InArgument x:TypeArguments="x:Boolean" />
+                                          </uix:VerifyExecutionOptions.Retry>
+                                          <uix:VerifyExecutionOptions.Timeout>
+                                            <InArgument x:TypeArguments="x:Double" />
+                                          </uix:VerifyExecutionOptions.Timeout>
+                                        </uix:VerifyExecutionOptions>
+                                      </uix:NKeyboardShortcuts.VerifyOptions>
+                                    </uix:NKeyboardShortcuts>
+                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,526" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                      <ui:CommentOut.Body>
+                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,415" sap2010:WorkflowViewState.IdRef="Sequence_177">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '&amp;No'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,355" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2ec94e90-f11a-47d4-bb9a-63c7d9870e01" Version="V5">
+                                            <uix:NClick.Target>
+                                              <uix:TargetAnchorable CVScreenId="4c167bee-198d-4404-a72b-13ed11d8c877" ContentHash="vwR7TeTFDUOMrhknRmMasQ" CvElementArea="296, 190, 75, 23" CvTextArea="325, 196, 16, 11" CvTextArgument="No" CvType="Button" DesignTimeRectangle="296, 190, 75, 23" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd ctrlid='2' title='&amp;amp;No' /&gt;" Guid="8f87bc24-c48a-4651-9d87-10c32caa30c9" ImageBase64="" InformativeScreenshot="7d5b3424b17d0f638abd64d6c7665e6a.png" Reference="g3GGs5swRku5trBzZQZVgg/Zd93r231yUu3_gTXBC01SA" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='SAP GUI for Windows*' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                                            </uix:NClick.Target>
+                                            <uix:NClick.VerifyOptions>
+                                              <uix:VerifyExecutionOptions Mode="Appears">
+                                                <uix:VerifyExecutionOptions.Retry>
+                                                  <InArgument x:TypeArguments="x:Boolean" />
+                                                </uix:VerifyExecutionOptions.Retry>
+                                                <uix:VerifyExecutionOptions.Timeout>
+                                                  <InArgument x:TypeArguments="x:Double" />
+                                                </uix:VerifyExecutionOptions.Timeout>
+                                              </uix:VerifyExecutionOptions>
+                                            </uix:NClick.VerifyOptions>
+                                          </uix:NClick>
+                                        </Sequence>
+                                      </ui:CommentOut.Body>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:CommentOut>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click SAP System Entry" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,364" sap2010:WorkflowViewState.IdRef="NClick_13" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Right" ScopeIdentifier="2ec94e90-f11a-47d4-bb9a-63c7d9870e01" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable DesignTimeRectangle="15, 85, 2735, 18" DesignTimeScaleFactor="1" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;wnd ctrlid='1008' /&gt;&lt;ctrl name='{0}' role='list item' /&gt;&quot;, in_str_SAPSystem)]" FuzzySelectorArgument="[string.Format(&quot;&lt;wnd ctrlid='1008' /&gt;&lt;ctrl name='{0}' role='list item' automationid='' check:text='{0}' /&gt;&quot;, in_str_SAPSystem)]" Guid="189936d7-167e-40c2-8101-471f14f6597a" ImageBase64="" InformativeScreenshot="fd5925bac84bb12d973e3fc186a18219.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='SAP Logon Pad*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target DesignTimeRectangle="15, 35, 50, 31" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='1068' title='&amp;amp;Log On' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1068' title='&amp;amp;Log On' check:text='unchecked' /&gt;" Guid="fbf43f22-80d5-4291-b207-cc16170b458e" SearchSteps="Selector, FuzzySelector" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NClick.Target>
+                                      <uix:NClick.VerifyOptions>
+                                        <uix:VerifyExecutionOptions Mode="Appears">
+                                          <uix:VerifyExecutionOptions.Retry>
+                                            <InArgument x:TypeArguments="x:Boolean" />
+                                          </uix:VerifyExecutionOptions.Retry>
+                                          <uix:VerifyExecutionOptions.Timeout>
+                                            <InArgument x:TypeArguments="x:Double" />
+                                          </uix:VerifyExecutionOptions.Timeout>
+                                        </uix:VerifyExecutionOptions>
+                                      </uix:NClick.VerifyOptions>
+                                    </uix:NClick>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SNC Logon'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,236" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2ec94e90-f11a-47d4-bb9a-63c7d9870e01" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable CVScreenId="50f32a60-91e9-4167-ae48-4c04198247c0" ContentHash="DSv8frJVd0GnWG9m7dm3aA" CvTextArea="27, 51, 357, 15" CvTextArgument="Logon with neither SNC nor Single Sign On Ctrl+Shift+Enter" CvType="Text" DesignTimeRectangle="3, 47, 403, 22" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Context' role='popup menu' /&gt;&lt;ctrl automationid='32806' /&gt;" Guid="c3e4158e-bb0f-4514-bdce-f54c0d887ab7" InformativeScreenshot="d641022645d71e79445bb2d2b43eeb0c.png" Reference="g3GGs5swRku5trBzZQZVgg/Y56CmgB2Q0uxboZ5h2Yyyw" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32768' idx='*' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                  </Sequence>
+                                </uix:NCheckState.IfNotExists>
+                                <uix:NCheckState.Target>
+                                  <uix:TargetAnchorable ContentHash="eByNZYqJAE-XzOKh22sHow" DesignTimeRectangle="0, 0, 236, 73" ElementType="Icon" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='Static' title='SAP Picture' /&gt;" Guid="8176e3e4-8b5b-4079-932a-79f109f828e1" InformativeScreenshot="3ca4546b1ea005859923dabb05980e82.png" Reference="g3GGs5swRku5trBzZQZVgg/SloITE77vEO0klxS6gC7wg" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='Afx:*' title='Sapgui Splash Screen' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                </uix:NCheckState.Target>
+                              </uix:NCheckState>
+                            </Sequence>
+                          </ActivityAction>
+                        </uix:NApplicationCard.Body>
+                        <uix:NApplicationCard.OCREngine>
+                          <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                            <ActivityFunc.Argument>
+                              <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                            </ActivityFunc.Argument>
+                          </ActivityFunc>
+                        </uix:NApplicationCard.OCREngine>
+                        <uix:NApplicationCard.TargetApp>
+                          <uix:TargetApp Area="0, 133, 805, 580" ContentHash="P6YR1vgEMUKCh5iz9qbzVg" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPGUI\saplgpad.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGnSURBVFhH7ZPNS8JgHMf3Bxh06LwRdQhU6O3W218SVGRg1yCwTpUV+Ta9dOhSl05CCEFBVDii0YvlraCoIDdhZpjaC2jya49u84Eyp5N52Qe+t22f7/PdRhgYGDQdAGgV09akmIiTuzQzf/DM6ZmFwxh3L3xFCwWwEJuscEP6rkGvdPijQDPxWPbze6D4CvQs0CnKPWE+kf6Q5Ai9CiC5N8zHhXRuWFKXkAtQ3ghMBjbATvs0hoaR1R0gPReKHM3uY3hOnH1Q0paRC7S7WHja7oK3oElT9gP90D2zDpTrTJF7GF5IvWOz45QLnMKjhgKpYIso7wWz3QXkcliUX5VmZ/h4IpMbknS/aUQBJN+l+8CqyKvMjtOIAnv+HrBOOYF0HhdPLs/+ms3/L0doKYBOjuRmmxOopSN8dv4lk688O45cgHKfw9jiLNjmRsHmUJcJxzhYpt2KHJ1clFefHUcugB5ArrFArjDie1QZdC26B5s9qWZ2nHKB+iPNztUsR2gtIM3O1zQ7jpYC8uyqP7i/uHzIhrZY4baehKLJiKpfzcDAwKAiBPEDVQBq73EKmcIAAAAASUVORK5CYII=" InformativeScreenshot="af4fb701120c2fbac30a3fca9db0ec63.png" Reference="g3GGs5swRku5trBzZQZVgg/KZxl2CpzxEKusgw4geveIg" Selector="&lt;wnd app='saplgpad.exe' cls='#32770' title='SAP Logon*' /&gt;">
+                            <uix:TargetApp.Arguments>
+                              <InArgument x:TypeArguments="x:String" />
+                            </uix:TargetApp.Arguments>
+                          </uix:TargetApp>
+                        </uix:NApplicationCard.TargetApp>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NApplicationCard>
+                      <uix:NCheckState DisplayName="Check App State 'User'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="558,2028" sap2010:WorkflowViewState.IdRef="NCheckState_12" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Timeout="10" Version="V3">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="486,506" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If Condition="[has_logging_enabled]" DisplayName="Only Log Message if logging is enabled" sap:VirtualizedContainerService.HintSize="452,446" sap2010:WorkflowViewState.IdRef="If_8">
+                              <If.Then>
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_86">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Info" Message="[Datetime.now.ToString + &quot;: SAP System Logon: OK&quot;]" />
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_121">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="486,1177" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_35" Level="Fatal" Message="[Datetime.now.ToString + &quot;: SAP System Logon: FAIL&quot;]" />
+                            <uix:NCheckState sap2010:Annotation.AnnotationText="Check if Mbar Window is visible to take screenshot" DisplayName="Check App State 'Menubar mbar'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,828" sap2010:WorkflowViewState.IdRef="NCheckState_24" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Version="V3">
+                              <uix:NCheckState.IfExists>
+                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_61" Level="Fatal" Message="[Datetime.now.ToString + &quot;: SAP System Logon: FAIL: MBAR Found: Taking Screenshot&quot;]" />
+                                </Sequence>
+                              </uix:NCheckState.IfExists>
+                              <uix:NCheckState.IfNotExists>
+                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_75">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_62" Level="Trace" Message="[Datetime.now.ToString + &quot;: SAP System Logon: FAIL: MBAR Not Found Either&quot;]" />
+                                </Sequence>
+                              </uix:NCheckState.IfNotExists>
+                              <uix:NCheckState.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="48, 14, 1880, 18" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='mbar' /&gt;" Guid="9bf5db5c-73f4-43c0-b302-9f14f9e0c1b7" ImageBase64="" InformativeScreenshot="58c52ac1a89809ad8b7450a6a4e35206.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='{0}' /&gt;&quot;, in_str_SAPSystem)]" SearchSteps="Selector" Version="V1" />
+                              </uix:NCheckState.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheckState>
+                            <Throw Exception="[new Exception(&quot;SAP Logon not successfull&quot;)]" sap:VirtualizedContainerService.HintSize="452,114" sap2010:WorkflowViewState.IdRef="Throw_6" />
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="31, 193, 132, 20" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/lblRSYST-BNAME' /&gt;" Guid="315efe7f-88c4-4b8d-9f77-df79240f401d" ImageBase64="" InformativeScreenshot="0e57c83976e3b8e7851b98cce5a78b87.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' sapProgram='SAPMSYST' /&gt;" SearchSteps="Selector" Version="V1" />
+                        </uix:NCheckState.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NCheckState>
+                      <uix:NApplicationCard sap2010:Annotation.AnnotationText="Best practice: Maximize SAP Window" AttachMode="ByInstance" DisplayName="Use Application: SAP" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="558,446" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="81d46825-f8f3-4a1b-9c2a-04779efb498b" Version="V2">
+                        <uix:NApplicationCard.Body>
+                          <ActivityAction x:TypeArguments="x:Object">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Sequence_106">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="MaximizeWindow_8" />
+                            </Sequence>
+                          </ActivityAction>
+                        </uix:NApplicationCard.Body>
+                        <uix:NApplicationCard.OCREngine>
+                          <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                            <ActivityFunc.Argument>
+                              <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                            </ActivityFunc.Argument>
+                          </ActivityFunc>
+                        </uix:NApplicationCard.OCREngine>
+                        <uix:NApplicationCard.TargetApp>
+                          <uix:TargetApp Area="0, 0, 544, 532" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplgpad.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE8SURBVFhHYxgFo2AUjIJBAxxrVls61ay5T2dcC7Ue7AAnoMB/emHHmjWz7KtXMkGtp68DgJbPsCtfzQi1GgLo5QCg5dMcy1cgLH//5UcECG89fa+5dsnR/5Ti0nkH/ztWrcJuefWaKXYVq1B9/v7Lz//Uwk/ffP6f3LX2v335cmyWT7KqQPI5DGAziBwMsjy+ddl/m6IFQMtWo1s+wbZ4CablIIDNMFLxk9ef/se1LMVuec2aPrMStGBHBtgMJAWDLI8FWV6M1fIeqDW4AdCQxSB89f7LfWsPXfm/9uBlknBsCzDYsVlevboLagVxwKZovotd6ZL/diWLScL25cuwWL6mA2os8QBoCFXKAWCwt0GNJA1QqSBqhhpHOqDUAUCfN0KNIg8AHaAJNGg+mTgXaswoGAWjYBSQCBgYAMLf0dVJBbU9AAAAAElFTkSuQmCC" InformativeScreenshot="cbacd61a92b263f41e9b2d3a5e1752c6.png" Selector="[string.Format(&quot;&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='{0}*' /&gt;&quot;, in_str_SAPSystem)]">
+                            <uix:TargetApp.Arguments>
+                              <InArgument x:TypeArguments="x:String" />
+                            </uix:TargetApp.Arguments>
+                            <uix:TargetApp.Url>
+                              <InArgument x:TypeArguments="x:String" />
+                            </uix:TargetApp.Url>
+                            <uix:TargetApp.WorkingDirectory>
+                              <InArgument x:TypeArguments="x:String" />
+                            </uix:TargetApp.WorkingDirectory>
+                          </uix:TargetApp>
+                        </uix:NApplicationCard.TargetApp>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NApplicationCard>
+                      <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Type in the Variable definied early on" ClickBeforeMode="None" DisplayName="Enter SAP Client" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="558,277" sap2010:WorkflowViewState.IdRef="NTypeInto_11" InteractionMode="Simulate" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Text="[in_str_SAPMandant]" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="212, 148, 39, 25" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/txtRSYST-MANDT' /&gt;" Guid="363646a3-a4eb-424d-8233-10683b1878b9" ImageBase64="" InformativeScreenshot="076b6de4f5da84ed57626a2ade5d01b3.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='{0}' /&gt;&quot;, in_str_SAPSystem)]" SearchSteps="Selector" Version="V1" />
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                      <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Data from the Asset" ClickBeforeMode="None" DisplayName="Enter SAP Username" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="558,277" sap2010:WorkflowViewState.IdRef="NTypeInto_12" InteractionMode="Simulate" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Text="[sec_SAPUsername]" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="212, 212, 129, 25" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/txtRSYST-BNAME' /&gt;" Guid="602f16c7-70a4-4ed1-a989-596467e7dc27" ImageBase64="" InformativeScreenshot="d7e372f5adca7be070dde297a7f44f4c.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='{0}' /&gt;&quot;, in_str_SAPSystem)]" SearchSteps="Selector" Version="V1" />
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                      <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="This Data is also from an Asset" ClickBeforeMode="None" DisplayName="Enter SAP Password" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="558,277" sap2010:WorkflowViewState.IdRef="NTypeInto_13" InteractionMode="HardwareEvents" IsPassword="True" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" SecureText="[sec_SAPPWD]" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="212, 244, 129, 25" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/pwdRSYST-BCODE' /&gt;" Guid="fa8e5ab3-9dd3-4ed8-880b-355a0d90ef08" ImageBase64="" InformativeScreenshot="2ba343ced1ab213033475124e91b3cd8.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='{0}' /&gt;&quot;, in_str_SAPSystem)]" SearchSteps="Selector" Version="V1" />
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                      <uix:NKeyboardShortcuts ActivateBefore="True" sap2010:Annotation.AnnotationText="Hintting Enter seamed to be the best solution" ClickBeforeMode="None" ContinueOnError="False" DisplayName="Simulate Enter to Login" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="558,351" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_9" InteractionMode="HardwareEvents" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V3">
+                        <uix:NKeyboardShortcuts.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="212, 244, 129, 25" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/pwdRSYST-BCODE' /&gt;" Guid="c25c5d1f-0a59-4321-809f-37835017c601" ImageBase64="" InformativeScreenshot="ab72511f49ea4e074c42d1a2efe0f15c.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='{0}' /&gt;&quot;, in_str_SAPSystem)]" SearchSteps="Selector" Version="V1" />
+                        </uix:NKeyboardShortcuts.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NKeyboardShortcuts>
+                    </Sequence>
+                    <If Condition="[bool_Terminate_Login AND CInt(str_current_index) + 1 = in_SAP_Credentials_Assets.Count()]" sap:VirtualizedContainerService.HintSize="592,3203" sap2010:WorkflowViewState.IdRef="If_11">
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="522,1303" sap2010:WorkflowViewState.IdRef="Sequence_165">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NCheckState sap2010:Annotation.AnnotationText="Check if the user is allready logged in, if yes select the entry to throw him out" DisplayName="Check if user is allready Logged in" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="488,1195" sap2010:WorkflowViewState.IdRef="NCheckState_21" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence sap2010:Annotation.AnnotationText="Throwing the User out" DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,780" sap2010:WorkflowViewState.IdRef="Sequence_169">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_65" Level="Warn" Message="[Datetime.now.ToString + &quot;: SAP User Login: Warning: User allready logged in, throwing him out&quot;]" />
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Continue with'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable DesignTimeRectangle="21, 333, 809, 25" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/radMULTI_LOGON_OPT1' /&gt;" Guid="de92392c-83e7-4dad-805e-0dc3ac4afa00" ImageBase64="" InformativeScreenshot="a4a375a864aaa4d110946acd984020b8.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='*' idx='*' /&gt;" SearchSteps="Selector" Version="V1" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" ContinueOnError="True" DisplayName="Keyboard Shortcuts 'Toolbar tbar[0]'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,320" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_14" InteractionMode="HardwareEvents" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Timeout="2" Version="V3">
+                                  <uix:NKeyboardShortcuts.Target>
+                                    <uix:TargetAnchorable DesignTimeRectangle="1, 233, 648, 40" DesignTimeScaleFactor="1" ElementType="Toolbar" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[0]' /&gt;" Guid="2bb9aada-b2c5-4607-adba-4e7b3751cd3b" ImageBase64="" InformativeScreenshot="c05d7aab0741cafd82d87ea93a95b0cc.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='saplgpad.exe' cls='#32770' title='{0}*' idx='*' /&gt;&quot;, in_str_SAPSystem)]" SearchSteps="Selector" Version="V1" />
+                                  </uix:NKeyboardShortcuts.Target>
+                                </uix:NKeyboardShortcuts>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_172">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <If Condition="[has_logging_enabled]" DisplayName="Only Log Message if logging is enabled" sap:VirtualizedContainerService.HintSize="450,478" sap2010:WorkflowViewState.IdRef="If_12">
+                                  <If.Then>
+                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="Sequence_170">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="LogMessage_66" Level="Trace" Message="[Datetime.now.ToString + &quot;: SAP User Login: No Popup for Allready logged on user: OK&quot;]" />
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_171">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="21, 429, 809, 25" DesignTimeScaleFactor="1" ElementType="Toolbar" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/radMULTI_LOGON_OPT3' /&gt;" Guid="69a96344-4092-4f5c-8754-27bab726c2c7" ImageBase64="" InformativeScreenshot="ca254aae4fbd918ce6aac43ddd32736a.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='saplgpad.exe' cls='#32770' title='{0}*' idx='*' /&gt;&quot;, in_str_SAPSystem)]" SearchSteps="Selector" Version="V1" />
+                            </uix:NCheckState.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NCheckState>
+                          <ui:Break sap:VirtualizedContainerService.HintSize="488,48" sap2010:WorkflowViewState.IdRef="Break_1" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="522,1770" sap2010:WorkflowViewState.IdRef="Sequence_166">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NCheckState sap2010:Annotation.AnnotationText="Check if the user is allready logged in, if yes try the next loop item" DisplayName="Check if user is allready Logged in" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="488,1710" sap2010:WorkflowViewState.IdRef="NCheckState_22" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence sap2010:Annotation.AnnotationText="Throwing the User out" DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="486,780" sap2010:WorkflowViewState.IdRef="Sequence_167">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_67" Level="Warn" Message="[Datetime.now.ToString + &quot;: SAP User Login: Warning: User allready logged in, trying next User&quot;]" />
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Continue with'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable DesignTimeRectangle="3, 274, 566, 20" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/radMULTI_LOGON_OPT3' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/radMULTI_LOGON_OPT3' check:text='Terminate this logon' /&gt;" Guid="78f66b44-4d71-4725-82f5-1b0defefbcbf" ImageBase64="" InformativeScreenshot="c45ba2216b69126e843c267205c46e0e.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='*' idx='*' /&gt;" SearchSteps="Selector" Version="V4" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" ContinueOnError="True" DisplayName="Keyboard Shortcuts 'Toolbar tbar[0]'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,320" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_15" InteractionMode="HardwareEvents" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Timeout="2" Version="V3">
+                                  <uix:NKeyboardShortcuts.Target>
+                                    <uix:TargetAnchorable DesignTimeRectangle="1, 233, 648, 40" DesignTimeScaleFactor="1" ElementType="Toolbar" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[0]' /&gt;" Guid="2bb9aada-b2c5-4607-adba-4e7b3751cd3b" ImageBase64="" InformativeScreenshot="c05d7aab0741cafd82d87ea93a95b0cc.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='saplgpad.exe' cls='#32770' title='{0}*' idx='*' /&gt;&quot;, in_str_SAPSystem)]" SearchSteps="Selector" Version="V1" />
+                                  </uix:NKeyboardShortcuts.Target>
+                                </uix:NKeyboardShortcuts>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="486,563" sap2010:WorkflowViewState.IdRef="Sequence_168">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <If Condition="[has_logging_enabled]" DisplayName="Only Log Message if logging is enabled" sap:VirtualizedContainerService.HintSize="452,455" sap2010:WorkflowViewState.IdRef="If_13">
+                                  <If.Then>
+                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_173">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_68" Level="Trace" Message="[Datetime.now.ToString + &quot;: SAP User Login: No Popup for Allready logged on user: OK&quot;]" />
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_174">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                                <ui:Break sap:VirtualizedContainerService.HintSize="452,48" sap2010:WorkflowViewState.IdRef="Break_2" />
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="21, 429, 809, 25" DesignTimeScaleFactor="1" ElementType="Toolbar" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/radMULTI_LOGON_OPT3' /&gt;" Guid="69a96344-4092-4f5c-8754-27bab726c2c7" ImageBase64="" InformativeScreenshot="ca254aae4fbd918ce6aac43ddd32736a.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='*' idx='*' /&gt;" SearchSteps="Selector" Version="V1" />
+                            </uix:NCheckState.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NCheckState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+            <uix:NKeyboardShortcuts ActivateBefore="True" sap2010:Annotation.AnnotationText="This one is tricky because sometimes it is there, sometimes not" ClickBeforeMode="None" ContinueOnError="True" DisplayName="Skip any SAP Message Window" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="628,374" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_12" InteractionMode="HardwareEvents" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Timeout="2" Version="V3">
+              <uix:NKeyboardShortcuts.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="1, 233, 648, 40" DesignTimeScaleFactor="1" ElementType="Toolbar" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[0]' /&gt;" Guid="2bb9aada-b2c5-4607-adba-4e7b3751cd3b" ImageBase64="" InformativeScreenshot="c05d7aab0741cafd82d87ea93a95b0cc.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='saplgpad.exe' cls='#32770' title='{0}*' idx='*' /&gt;&quot;, in_str_SAPSystem)]" SearchSteps="Selector" Version="V1" />
+              </uix:NKeyboardShortcuts.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
+            <uix:NKeyboardShortcuts ActivateBefore="True" sap2010:Annotation.AnnotationText="This one is tricky because sometimes it is there, sometimes not" ClickBeforeMode="None" ContinueOnError="True" DisplayName="Skip any SAP Message Window" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="628,374" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_16" InteractionMode="HardwareEvents" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Timeout="2" Version="V3">
+              <uix:NKeyboardShortcuts.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="1, 233, 648, 40" DesignTimeScaleFactor="1" ElementType="Toolbar" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[0]' /&gt;" Guid="2bb9aada-b2c5-4607-adba-4e7b3751cd3b" ImageBase64="" InformativeScreenshot="c05d7aab0741cafd82d87ea93a95b0cc.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='saplgpad.exe' cls='#32770' title='{0}*' idx='*' /&gt;&quot;, in_str_SAPSystem)]" SearchSteps="Selector" Version="V1" />
+              </uix:NKeyboardShortcuts.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
+            <uix:NCheckState sap2010:Annotation.AnnotationText="Check if the SAP Login was successfull" DisplayName="Check if SAP Main Windows is availabl" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="628,1222" sap2010:WorkflowViewState.IdRef="NCheckState_14" ScopeIdentifier="ca90d834-d3d3-4717-b466-24f1b3513e09" Timeout="2" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="486,506" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[has_logging_enabled]" DisplayName="Only Log Message if logging is enabled" sap:VirtualizedContainerService.HintSize="452,446" sap2010:WorkflowViewState.IdRef="If_10">
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_88">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="Info" Message="[Datetime.now.ToString + &quot;: SAP User Login: OK&quot;]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_130">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="486,349" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Fatal" Message="[Datetime.now.ToString + &quot;: SAP User Login: FAIL&quot;]" />
+                  <Throw Exception="[new Exception(&quot;SAP Login not successfull&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="0, 0, 750, 550" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" Guid="d70bc8dc-d650-49dd-a2cf-9317a483b82a" ImageBase64="" InformativeScreenshot="082c64ac42a435bef1e3e8eadf3e4726.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='{0}*' /&gt;&quot;, in_str_SAPSystem)]" SearchSteps="Selector, FuzzySelector" Version="V1">
+                  <uix:TargetAnchorable.FuzzySelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </InArgument>
+                  </uix:TargetAnchorable.FuzzySelectorArgument>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplgpad.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFASURBVFhHYxgFo2AUjIJBAxxrVls61ay5T2dcC7Ue7AAnoMB/emHHmjWz7KtXMkGtp68DgJbPsCtfzQi1GgLo5QCg5dMcy1cgLP+/QzgChA8scW1unlD+v7mfMlzVU//fsWoVdsur10yxq1iF6vP/O0X+Uwt/2SL1P6224r99+XJslk+yqkDyOQxgM4gc/GWL9P+kiuL/NkULgJatRrd8gm3xEkzLQQCbYaTiz0DLE8txWF6zps+sBC3YkQE2A0nBnzdL/08oL/1vU4zV8h6oNbgB0JDFIPxojcq+7bMd/2+f7UASTqgox2559eouqBXEAZui+S52pUv+25UsJgnbly/DYvmaDqixxAOgIVQpB4DB3gY1kjRApYKoGWoc6YBSBwB93gg1ijwAdIAm0KD5ZOJcqDGjYBSMglFAImBgAAAGHG0I3oyiGgAAAABJRU5ErkJggg==" InformativeScreenshot="8f4b17268bc66e005dc294b0a5867f28.png" Selector="&lt;wnd app='saplgpad.exe' title='SAP Logon*' /&gt;">
+          <uix:TargetApp.Arguments>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.Arguments>
+          <uix:TargetApp.WorkingDirectory>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.WorkingDirectory>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

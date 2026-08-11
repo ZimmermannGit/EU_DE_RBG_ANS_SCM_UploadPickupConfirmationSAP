@@ -1,0 +1,6 @@
+{
+  "Name": "EU_DE_RBG_ANS_SCM_UploadPickupConfirmationSAP",
+  "ProjectType": "Process",
+  "Description": "Automated processing of delivery note PDFs from OneDrive, splitting them into individual documents and upload the files in SAP",
+  "MainFile": "Main.xaml"
+}

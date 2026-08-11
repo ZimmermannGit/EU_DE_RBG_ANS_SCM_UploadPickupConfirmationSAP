@@ -1,0 +1,14 @@
+﻿{
+  "Name": "UIDT0706",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "-jzic9tkbkuJ98An1qSsGw",
+  "Reference": "fJM94VxrM0ieI8fVNIPlpA/-jzic9tkbkuJ98An1qSsGw",
+  "ParentRef": "fJM94VxrM0ieI8fVNIPlpA/TlenLX9K1k6B6srgvYRGsA",
+  "Created": "2026-07-09T10:47:18.9458628Z",
+  "Updated": "2026-07-09T10:47:18.9458628Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.32.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

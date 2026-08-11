@@ -1,0 +1,115 @@
+{
+  "name": "EU_DE_RBG_ANS_SCM_UploadPickupConfirmationSAP",
+  "projectId": "e140f4e5-3a15-4841-9129-56309b5fbdde",
+  "description": "Automated processing of delivery note PDFs from OneDrive, splitting them into individual documents and upload the files in SAP",
+  "main": "Main.xaml",
+  "dependencies": {
+    "AU_EU_DE_SCM_RBG_SAP_LOGON": "[1.0.33]",
+    "AU_WW_ComplianceLibrary": "26.2.2",
+    "DLRPA_SAP_BuiltIn_Login": "[1.2.2]",
+    "MyTemplates_Library": "[1.0.7]",
+    "SAP_BuiltIn_Login": "[2.0.5]",
+    "UiPath.DocumentUnderstanding.Activities": "3.3.0",
+    "UiPath.Excel.Activities": "[3.5.2]",
+    "UiPath.IntelligentOCR.Activities": "[7.3.0]",
+    "UiPath.MicrosoftOffice365.Activities": "3.9.12",
+    "UiPath.OCR.Activities": "[4.3.0]",
+    "UiPath.Persistence.Activities": "[1.10.1]",
+    "UiPath.System.Activities": "[26.2.6]",
+    "UiPath.Testing.Activities": "[25.10.2]",
+    "UiPath.UIAutomation.Activities": "[25.10.32]",
+    "UiPath.WebAPI.Activities": "[2.4.0]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "25.10.12.0",
+  "projectVersion": "1.0.3",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "workflowSerialization": "NewtonsoftJson",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "493c0c9a-07c9-4e94-9eb9-e21649164897",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\GetTransactionDataTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "db9191f0-9ac4-469a-af0a-bc0d3c5a17ea",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\InitAllApplicationsTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "db1b72d0-c742-4ca0-9d73-b0185e6783e5",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\InitAllSettingsTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "0a2cac49-eb0f-44e4-be9d-e58a6d26e94f",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\MainTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "9589c82e-62cc-4fc6-a80a-4f6e9c4ccfc5",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\ProcessTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "19e6be81-d851-45f4-ac4a-435d461345bf",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
+      }
+    ],
+    "saveToCloud": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "ead0b639-2255-4089-bb3d-46f8bee2dd93",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows",
+  "automationHubIdeaUrl": "https://cloud.uipath.com/aumovio/prod/automationhub_/automation-profile/au-eu-de-scm-upload-pickup-confirmation"
+}

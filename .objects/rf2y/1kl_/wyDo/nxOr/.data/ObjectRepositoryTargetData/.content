@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="YBNc9dKfcUazQ1mTe_fEog" Reference="fJM94VxrM0ieI8fVNIPlpA/nxOrKdH1g0a9tAOVI7ZVVQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="30, 90, 32, 22" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='titl/shellcont/shell' /&gt;" Guid="d6eb09be-ec57-4072-a6ca-23bb413dff71" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='Del. Returnable Pack 9348001000: Overview' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="a35c4d24302fc07d5026264813a91889.jpg" xmlns="">0qX2yGQU-TES0ktoURbZbyQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">SAPClickToolbarButton</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Upload Delivery Note",
+  "Type": "Screen",
+  "Id": "ZOS0-XcCB0a55IMtScJmuQ",
+  "Reference": "fJM94VxrM0ieI8fVNIPlpA/ZOS0-XcCB0a55IMtScJmuQ",
+  "ParentRef": "fJM94VxrM0ieI8fVNIPlpA/1kl_DlEVwEuQMoz9XqfEqg",
+  "Created": "2026-07-17T07:45:12.1748202Z",
+  "Updated": "2026-07-17T07:45:12.1748202Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.32.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

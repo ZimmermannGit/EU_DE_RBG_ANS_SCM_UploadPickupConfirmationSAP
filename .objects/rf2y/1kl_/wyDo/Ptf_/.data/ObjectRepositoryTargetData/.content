@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="v6fINcmDX0e1A7xTng07qA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="87, 54, 356, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/txtDY_FILENAME' /&gt;" Guid="bc7191c0-bb3c-4b90-9a09-9bef8b029985" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='Storing Files in Documents' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="521431e3b5c761882e1d8c3984f2c0e3.jpg" xmlns="">0apl0ZyR9xEacbS1tbcFTPA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

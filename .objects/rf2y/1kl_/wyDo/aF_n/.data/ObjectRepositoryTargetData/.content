@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="mCvCe_2et02b1IzhyNKttw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="150, 54, 426, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/sub:SAPLSPO4:0300/txtSVALD-VALUE[1,21]' /&gt;" Guid="abeec950-f52b-4259-aa10-fb93158ec938" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='File Description' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="41cdf8f70d26880067a89211b6afbd74.jpg" xmlns="">0mIj2fWGY4kGGtMQ39fOqKw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

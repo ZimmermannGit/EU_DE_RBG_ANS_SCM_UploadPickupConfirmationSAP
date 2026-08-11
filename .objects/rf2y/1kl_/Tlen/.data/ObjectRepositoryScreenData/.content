@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="XJ9dGp0-ckiQzqRyPR7CtQ" Reference="fJM94VxrM0ieI8fVNIPlpA/TlenLX9K1k6B6srgvYRGsA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="108, 108, 750, 550" ContentHash="tRLL-Lh4U06nYQJdF4WIgg" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPGUI\saplgpad.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVFhH7ZPNSgJRGIZn3TJaj0HtRLqAsqspMqxNizatKoLKn6wgAltkdQFtoijLmYXibxIZEtEmZwZGLVPTQNOvGT2jR8x0HNHNPPBu533PM+cQKioqAwcAhoWMDChDxN3zZ2Tl+o3pZ1adMeaF/w6XSqAl9mkuQVrvoV8Zs4Vhh+Zi2fzPZOUX9HPAuFBupth4OofKRZoHhHoQ/HvViOUWiuX4dGEaVVeRBmgsIZg5ewDDaUBR5k4CoDfdArntrZWL2q00ywjap1BtHWnAqNkPiVReuJjKcAWjMLHsAHLLUys30yyf+sK04+AD4h/dDyiXy0AFnkC7eADkBiWUh6raaZaLZwp6VNdM44Ac+pw8xPIb7yPoFvZQeRvtOL0Y4PJHQGfcBXLNWTm5pP09W/y/XKRhgMw7IJ7c5Re0z9tAsy5cvLp2NpEpttaOIw3QmAMw63CD8egKjPbLjmI4vADdkr1WLp5cKG+vHUcaUInJB+SmW14qz62uPdmJdpyGAV0GaWdkl4soHYC0s7K04ygZIGnv+ML9he81Qx97+Gg3OQ8ngx09NRUVFZWWEMQvcmDfp4NQBhkAAAAASUVORK5CYII=" Reference="fJM94VxrM0ieI8fVNIPlpA/TlenLX9K1k6B6srgvYRGsA" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='SAP' /&gt;" Version="V3">
+      <TargetApp.WorkingDirectory>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.WorkingDirectory>
+      <imageRef attrName="InformativeScreenshot" originalValue="54b6841cf0685fd577692116de53e032.jpg" xmlns="">0ZsH3YMCDtkGDHS1KLlxJDA</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

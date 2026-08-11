@@ -1,0 +1,13 @@
+﻿{
+  "Name": "SAP.Toolbar.1(1)",
+  "Type": "Element",
+  "Id": "4xbfa2OZpE25XSi1LFB1FQ",
+  "Reference": "fJM94VxrM0ieI8fVNIPlpA/4xbfa2OZpE25XSi1LFB1FQ",
+  "ParentRef": "fJM94VxrM0ieI8fVNIPlpA/wyDoIdhh9kKmweY56-xn8A",
+  "Created": "2026-07-17T05:59:13.1589503Z",
+  "Updated": "2026-07-17T05:59:13.1589503Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.32.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

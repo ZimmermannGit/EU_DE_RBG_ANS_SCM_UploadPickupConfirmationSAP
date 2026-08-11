@@ -1,0 +1,12 @@
+﻿{
+  "Name": "SAP Easy Access",
+  "Type": "App",
+  "Id": "rf2yVO2EakCdQCRwIJdn0w",
+  "Reference": "fJM94VxrM0ieI8fVNIPlpA/rf2yVO2EakCdQCRwIJdn0w",
+  "Created": "2026-07-09T10:39:44.0039092Z",
+  "Updated": "2026-07-09T10:39:44.0039092Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.32.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
