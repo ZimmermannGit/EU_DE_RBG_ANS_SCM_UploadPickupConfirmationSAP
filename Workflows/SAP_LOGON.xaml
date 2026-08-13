@@ -460,7 +460,7 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="AU_EU_DE_SCM_UPLOAD_PICKUP_CONFIRMATION_SAP_User01" CacheStrategy="None" DisplayName="Get Credential" FolderPath="AUTO/AN/Regensburg/SCM" sap:VirtualizedContainerService.HintSize="592,176" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[sec_SAPPWD]" Username="[sec_SAPUsername]" />
+                    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="EU_DE_RBG_ANS_SCM_UploadPickupConfirmation_SAP_User01" CacheStrategy="None" DisplayName="Get Credential" FolderPath="AUTO/AN/Regensburg/SCM" sap:VirtualizedContainerService.HintSize="592,176" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[sec_SAPPWD]" Username="[sec_SAPUsername]" />
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="592,175" sap2010:WorkflowViewState.IdRef="LogMessage_69" Message="[&quot;Login Asset is: &quot; + currentText]" />
                     <Sequence DisplayName="Do SNC Login" sap:VirtualizedContainerService.HintSize="592,6768" sap2010:WorkflowViewState.IdRef="Sequence_164">
                       <sap:WorkflowViewStateService.ViewState>

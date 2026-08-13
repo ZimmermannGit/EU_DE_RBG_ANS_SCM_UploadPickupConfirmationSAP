@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:a="clr-namespace:AU_EU_DE_SCM_RBG_SAP_LOGON;assembly=AU_EU_DE_SCM_RBG_SAP_LOGON" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
@@ -173,7 +173,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="937,947" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="950,537.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_SAP_User" />
       <Variable x:TypeArguments="ss:SecureString" Name="sec_SAP_Password" />
@@ -185,26 +185,13 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="486,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
-    <a:SAP_REGEDIT_RPA_SETTINGS sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="SAP_REGEDIT_RPA_SETTINGS_1" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,493" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,382" sap2010:WorkflowViewState.IdRef="Sequence_11">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <a:SAP_LOGON sap:VirtualizedContainerService.HintSize="416,322" sap2010:WorkflowViewState.IdRef="SAP_LOGON_1" bool_Terminate_Login="True" in_SAP_Credentials_Assets="[{&quot;AU_EU_DE_SCM_UPLOAD_PICKUP_CONFIRMATION_SAP_User01&quot;}]" in_bool_logging="True" in_str_SAPMandant="[in_Config(&quot;AU_EU_DE_SCM_UPLOAD_PICKUP_CONFIRMATION_SAP_Mandant&quot;).ToString]" in_str_SAPSystem="[in_Config(&quot;AU_EU_DE_SCM_UPLOAD_PICKUP_CONFIRMATION_SAP_System&quot;).ToString]" />
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_LOGON - Invoke Workflow File (SAP_LOGON.xaml)" sap:VirtualizedContainerService.HintSize="486,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Workflows\SAP_LOGON.xaml">
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="SAP_LOGON - Invoke Workflow File (SAP_LOGON.xaml)" sap:VirtualizedContainerService.HintSize="450,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Workflows\SAP_LOGON.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_SAPSystem">[in_Config("AU_EU_DE_SCM_UPLOAD_PICKUP_CONFIRMATION_SAP_System").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_SAPMandant">[in_Config("AU_EU_DE_SCM_UPLOAD_PICKUP_CONFIRMATION_SAP_Mandant").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_SAPSystem">[in_Config("EU_DE_RBG_ANS_SCM_UploadPickupConfirmation_SAP_System").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_SAPMandant">[in_Config("EU_DE_RBG_ANS_SCM_UploadPickupConfirmation_SAP_Mandant").ToString]</InArgument>
         <InArgument x:TypeArguments="x:Boolean" x:Key="in_bool_logging">True</InArgument>
-        <InArgument x:TypeArguments="s:String[]" x:Key="in_SAP_Credentials_Assets">[{"AU_EU_DE_SCM_UPLOAD_PICKUP_CONFIRMATION_SAP_User01"}]</InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_SAP_Credentials_Assets">[{"EU_DE_RBG_ANS_SCM_UploadPickupConfirmation_SAP_User01"}]</InArgument>
         <InArgument x:TypeArguments="x:Boolean" x:Key="bool_Terminate_Login">True</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>

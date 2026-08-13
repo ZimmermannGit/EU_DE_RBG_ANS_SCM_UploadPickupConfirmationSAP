@@ -136,16 +136,12 @@
       <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UploadDeliveryNotesToSAP" sap:VirtualizedContainerService.HintSize="937,5708" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UploadDeliveryNotesToSAP" sap:VirtualizedContainerService.HintSize="937,5883" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strPdfPath" />
       <Variable x:TypeArguments="x:String" Name="strDeliveryNumber" />
       <Variable x:TypeArguments="x:String" Name="strLocalPdfPath" />
-      <Variable x:TypeArguments="x:Boolean" Name="blnUploadSuccessful">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Boolean" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="blnUploadSuccessful" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -160,6 +156,7 @@
         <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("PdfPath").ToString]</InArgument>
       </Assign.Value>
     </Assign>
+    <ui:LogMessage DisplayName="Log Message - PDF Path" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[strPdfPath]" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Invoke Workflow - Prepare SAP Upload" sap:VirtualizedContainerService.HintSize="488,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\PrepareSapUpload.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="out_LocalPdfPath">[strLocalPdfPath]</OutArgument>
@@ -174,7 +171,7 @@
         <InArgument x:TypeArguments="x:String">["93" + in_TransactionItem.SpecificContent("DeliveryNumber").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message - Upload Input Data" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;DeliveryNumber: &quot; + strDeliveryNumber +&#xD;&#xA;&quot; | PdfPath: &quot; + strPdfPath]" />
+    <ui:LogMessage DisplayName="Log Message - Upload Input Data" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;DeliveryNumber: &quot; + strDeliveryNumber +&#xA;&quot; | PdfPath: &quot; + strPdfPath]" />
     <uix:NApplicationCard AttachMode="ByInstance" DisplayName="NApplicationCard - Open VL02N" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,481" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="89050719-accb-44af-8cbc-8925708e6d7a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
