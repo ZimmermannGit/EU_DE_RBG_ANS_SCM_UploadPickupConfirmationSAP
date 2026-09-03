@@ -136,7 +136,7 @@
       <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UploadDeliveryNotesToSAP" sap:VirtualizedContainerService.HintSize="937,5883" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UploadDeliveryNotesToSAP" sap:VirtualizedContainerService.HintSize="937,6383" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strPdfPath" />
       <Variable x:TypeArguments="x:String" Name="strDeliveryNumber" />
@@ -172,6 +172,50 @@
       </Assign.Value>
     </Assign>
     <ui:LogMessage DisplayName="Log Message - Upload Input Data" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;DeliveryNumber: &quot; + strDeliveryNumber +&#xA;&quot; | PdfPath: &quot; + strPdfPath]" />
+    <uix:NApplicationCard AttachMode="ByInstance" ContinueOnError="True" DisplayName="NApplicationCard - Click Enter License Window" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,468" sap2010:WorkflowViewState.IdRef="NApplicationCard_9" ScopeGuid="89050719-accb-44af-8cbc-8925708e6d7a" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,245" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Continue (Enter)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_19" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="AX36hvrp40G0nJ4AYdDIoQ" DesignTimeRectangle="307, 443, 20, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[0]/btn[0]' /&gt;" Guid="21c28fe8-bf70-4901-ad5b-768ce1dff830" InformativeScreenshot="0c2a962ac6987d3e6a2df57a10e6db64.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/p8NIe89BSkqSVrdKx_adxg" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='Copyright' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" ContentHash="OOs5loqOdkKhjCIt8Ax_DQ" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPGUI\saplgpad.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVFhH7ZPNSgJRGIZn3TJaj0HtRLqAsqspMqxNizatKoLKn6wgAltkdQFtoijLmYXibxIZEtEmZwZGLVPTQNOvGT2jR8x0HNHNPPBu533PM+cQKioqAwcAhoWMDChDxN3zZ2Tl+o3pZ1adMeaF/w6XSqAl9mkuQVrvoV8Zs4Vhh+Zi2fzPZOUX9HPAuFBupth4OofKRZoHhHoQ/HvViOUWiuX4dGEaVVeRBmgsIZg5ewDDaUBR5k4CoDfdArntrZWL2q00ywjap1BtHWnAqNkPiVReuJjKcAWjMLHsAHLLUys30yyf+sK04+AD4h/dDyiXy0AFnkC7eADkBiWUh6raaZaLZwp6VNdM44Ac+pw8xPIb7yPoFvZQeRvtOL0Y4PJHQGfcBXLNWTm5pP09W/y/XKRhgMw7IJ7c5Re0z9tAsy5cvLp2NpEpttaOIw3QmAMw63CD8egKjPbLjmI4vADdkr1WLp5cKG+vHUcaUInJB+SmW14qz62uPdmJdpyGAV0GaWdkl4soHYC0s7K04ygZIGnv+ML9he81Qx97+Gg3OQ8ngx09NRUVFZWWEMQvcmDfp4NQBhkAAAAASUVORK5CYII=" InformativeScreenshot="2444b7938791c84387f0c6edf0a88d06.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/i4x9opmJfkmCXalywFomhA" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access' /&gt;" Version="V3">
+          <uix:TargetApp.Arguments>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.Arguments>
+          <uix:TargetApp.WorkingDirectory>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.WorkingDirectory>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
     <uix:NApplicationCard AttachMode="ByInstance" DisplayName="NApplicationCard - Open VL02N" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,481" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="89050719-accb-44af-8cbc-8925708e6d7a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
