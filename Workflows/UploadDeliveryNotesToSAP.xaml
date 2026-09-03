@@ -172,7 +172,7 @@
       </Assign.Value>
     </Assign>
     <ui:LogMessage DisplayName="Log Message - Upload Input Data" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;DeliveryNumber: &quot; + strDeliveryNumber +&#xA;&quot; | PdfPath: &quot; + strPdfPath]" />
-    <uix:NApplicationCard AttachMode="ByInstance" ContinueOnError="True" DisplayName="NApplicationCard - Click Enter License Window" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,468" sap2010:WorkflowViewState.IdRef="NApplicationCard_9" ScopeGuid="89050719-accb-44af-8cbc-8925708e6d7a" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" ContinueOnError="True" DisplayName="NApplicationCard - Click Enter License Window" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,500" sap2010:WorkflowViewState.IdRef="NApplicationCard_9" ScopeGuid="89050719-accb-44af-8cbc-8925708e6d7a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -184,7 +184,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Continue (Enter)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_19" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DelayAfter="5" DisplayName="Click 'Button Continue (Enter)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_19" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable ContentHash="AX36hvrp40G0nJ4AYdDIoQ" DesignTimeRectangle="307, 443, 20, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[0]/btn[0]' /&gt;" Guid="21c28fe8-bf70-4901-ad5b-768ce1dff830" InformativeScreenshot="0c2a962ac6987d3e6a2df57a10e6db64.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/p8NIe89BSkqSVrdKx_adxg" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='Copyright' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NClick.Target>
