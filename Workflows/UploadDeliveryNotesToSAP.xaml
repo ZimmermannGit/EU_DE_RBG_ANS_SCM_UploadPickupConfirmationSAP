@@ -136,7 +136,7 @@
       <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UploadDeliveryNotesToSAP" sap:VirtualizedContainerService.HintSize="937,6383" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UploadDeliveryNotesToSAP" sap:VirtualizedContainerService.HintSize="937,6733" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strPdfPath" />
       <Variable x:TypeArguments="x:String" Name="strDeliveryNumber" />
@@ -324,13 +324,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="NApplicationCard - Upload Delivery Note" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,3587" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" ScopeGuid="89050719-accb-44af-8cbc-8925708e6d7a" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="NApplicationCard - Upload Delivery Note" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,3937" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" ScopeGuid="89050719-accb-44af-8cbc-8925708e6d7a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,3332" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,3682" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -424,15 +424,15 @@
                 <uix:TargetAnchorable ContentHash="MDhRVDqc1kStfOvpfaYrtQ" DesignTimeRectangle="515, 443, 20, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[0]/btn[0]' /&gt;" Guid="48481e9c-34af-4a9a-b7cb-d889d82b5046" InformativeScreenshot="0535b1464057866f283adcfbb3dc32ab.jpg" Reference="fJM94VxrM0ieI8fVNIPlpA/OnTuF2aK7EqMNrM7O8kBsg" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='Archive from Frontend' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NCheckState DisplayName="Check App State - Verify Uploaded File Exists" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,797" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
+            <uix:NCheckState DisplayName="Check App State - Verify Uploaded File Exists" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,1147" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="89050719-accb-44af-8cbc-8925708e6d7a" Version="V5">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,401" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Assign - Upload Successful" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_7">
+                  <Assign DisplayName="Assign - Upload Successful" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_7">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Boolean">[blnUploadSuccessful]</OutArgument>
                     </Assign.To>
@@ -440,16 +440,17 @@
                       <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
                     </Assign.Value>
                   </Assign>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Upload Successfull&quot;]" />
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,401" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Assign - Upload Failed" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_8">
+                  <Assign DisplayName="Assign - Upload Failed" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_8">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Boolean">[blnUploadSuccessful]</OutArgument>
                     </Assign.To>
@@ -457,6 +458,7 @@
                       <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
                     </Assign.Value>
                   </Assign>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Upload Failed&quot;]" />
                 </Sequence>
               </uix:NCheckState.IfNotExists>
               <uix:NCheckState.Target>
