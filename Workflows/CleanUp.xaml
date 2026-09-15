@@ -272,7 +272,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" ImpersonatedUserEmailAddress="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" SecurePassword="{x:Null}" Timeout="{x:Null}" Username="{x:Null}" Account="uidt0706@automotive-wan.com" ApplicationId="7e5fd973-0a88-4a06-bdd3-bc2bd2e31151" AuthenticationType="InteractiveToken" ConfigLocation="PropertiesPanel" DataStoreLocation="ORCHESTRATOR" DisplayName="Microsoft 365 Scope" EmailAddress="uidt0706@automotive-wan.com" Environment="Global" Folder="LC3" sap:VirtualizedContainerService.HintSize="452,1292" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_2" OAuthApplication="Custom" RuntimeItemInputMode="Browse" TenantId="3bd97919-57c3-48d3-9e9a-8e4c01614a8f" UseConnectionService="False">
+          <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" ImpersonatedUserEmailAddress="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" SecurePassword="{x:Null}" Timeout="{x:Null}" Username="{x:Null}" Account="uidt0706@automotive-wan.com" ApplicationId="7e5fd973-0a88-4a06-bdd3-bc2bd2e31151" AuthenticationType="InteractiveToken" ConfigLocation="PropertiesPanel" DataStoreLocation="ORCHESTRATOR" DisplayName="Microsoft 365 Scope" EmailAddress="uidt0706@automotive-wan.com" Environment="Global" Folder="LC3" sap:VirtualizedContainerService.HintSize="452,1188" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_2" OAuthApplication="Custom" RuntimeItemInputMode="Browse" TenantId="3bd97919-57c3-48d3-9e9a-8e4c01614a8f" UseConnectionService="False">
             <uma:Office365ApplicationScope.AuthenticationScopes>
               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                 <InArgument x:TypeArguments="x:String">Sites.Read.All</InArgument>
@@ -283,7 +283,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ParentScope" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1065" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,952" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="sharePointFile" />
                   </Sequence.Variables>
@@ -348,7 +348,6 @@
                       </umafm:DriveItemArgument>
                     </umaf:MoveItemConnections.FolderArgument>
                   </umaf:MoveItemConnections>
-                  <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="416,113" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="[in_LocalPdfPath]" />
                   <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID7}" ReplyTo="{x:Null}" SensitivityLabelId="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;&amp;quot;Upload failed.&amp;quot; + Environment.NewLine +&#xA;&amp;quot;File name: &amp;quot; + sharePointFile.Name + Environment.NewLine +&#xA;&amp;quot;Source: &amp;quot; + in_PdfPath&lt;/SPAN&gt;&lt;/P&gt;&quot;)]" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,490" sap2010:WorkflowViewState.IdRef="SendMailConnections_2" Importance="Normal" InputType="HTML" IsDeliveryReceiptRequested="False" IsReadReceiptRequested="False" SaveAsDraft="False" Subject="[&quot;SAP Upload Failed - &quot; + sharePointFile.Name]" To="[New String(){&quot;manuel.zimmermann@aumovio.com&quot;}]" UseConnectionService="False" UseSharedMailbox="False">
                     <umam:SendMailConnections.AttachmentsBackup>
                       <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
@@ -392,6 +391,7 @@
               </usau:BackupSlot>
             </uma:Office365ApplicationScope.RuntimeItemFullPathBackup>
           </uma:Office365ApplicationScope>
+          <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="452,104" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="[in_LocalPdfPath]" />
         </Sequence>
       </If.Else>
     </If>
