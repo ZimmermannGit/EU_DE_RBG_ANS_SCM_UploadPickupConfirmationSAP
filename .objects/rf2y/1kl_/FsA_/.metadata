@@ -1,0 +1,13 @@
+﻿{
+  "Name": "NApplicationCard - Enter Delivery Number",
+  "Type": "Screen",
+  "Id": "FsA_iw9RJkWCIdH0rzFPtw",
+  "Reference": "fJM94VxrM0ieI8fVNIPlpA/FsA_iw9RJkWCIdH0rzFPtw",
+  "ParentRef": "fJM94VxrM0ieI8fVNIPlpA/1kl_DlEVwEuQMoz9XqfEqg",
+  "Created": "2026-09-10T12:25:55.0808181Z",
+  "Updated": "2026-09-10T12:25:55.0808181Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.32.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

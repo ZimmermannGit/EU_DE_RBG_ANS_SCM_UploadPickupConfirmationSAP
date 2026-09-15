@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="GLFI3DRG8kqQ2i2aHbgnYA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="WrZoSTU3bEmTIr-9n5UyMQ" Reference="fJM94VxrM0ieI8fVNIPlpA/3pOGudhp5UWAkLEFBhtGRw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="230, 50, 22, 22" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[0]/btn[11]' /&gt;" Guid="47696001-a4af-44e1-a5be-93e86489855a" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='Del. Returnable Pack 9348001000: Overview' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="29edb630cd0ca3026718d0bf182c2ec4.jpg" xmlns="">0-m1Bz3XMZEKVcVGcCSdbiA</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="230, 50, 22, 22" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[0]/btn[11]' /&gt;" Guid="47696001-a4af-44e1-a5be-93e86489855a" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='Del. Returnable Pack *: Overview' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="29edb630cd0ca3026718d0bf182c2ec4.jpg" xmlns="">0hAb9uqiXhkqk2ADnrgN41A</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">Click</x:String>
   </ObjectRepositoryTargetData.Data>

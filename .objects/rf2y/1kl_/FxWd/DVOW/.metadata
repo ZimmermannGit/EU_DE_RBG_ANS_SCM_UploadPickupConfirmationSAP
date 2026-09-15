@@ -1,0 +1,13 @@
+﻿{
+  "Name": "File Storage SystemC…",
+  "Type": "Element",
+  "Id": "DVOWMWZhE0KGPN3qtoT89A",
+  "Reference": "fJM94VxrM0ieI8fVNIPlpA/DVOWMWZhE0KGPN3qtoT89A",
+  "ParentRef": "fJM94VxrM0ieI8fVNIPlpA/FxWdiotOe0W81D5joFmSdg",
+  "Created": "2026-09-10T12:12:17.6340661Z",
+  "Updated": "2026-09-10T12:12:17.6340661Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.32.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

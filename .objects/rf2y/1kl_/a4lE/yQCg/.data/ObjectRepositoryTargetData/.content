@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="yghN4M0ac0eOwnuBFwvbxQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="MIUtiD6RRUaYKAmiOV42lA" Reference="fJM94VxrM0ieI8fVNIPlpA/yQCgM9cCZ0KBlw-vaoHMKg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="55, 177, 350, 32" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='shellcont/shell' /&gt;" Guid="5c83aadb-fe82-4d68-b345-9bead303b5d9" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='Del. Returnable Pack 9348004607 Display: Overview' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="55, 177, 350, 32" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='shellcont/shell' /&gt;" Guid="5c83aadb-fe82-4d68-b345-9bead303b5d9" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='Del. Returnable Pack * Display: Overview' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
       <TargetAnchorable.PointOffset>
         <PointOffset Position="TopLeft" X="16" Y="12" />
       </TargetAnchorable.PointOffset>
-      <imageRef attrName="InformativeScreenshot" originalValue="a45eedb3a47f9340200770f12c7ed72a.jpg" xmlns="">04R_mQL-2c0KHiPcCiqj-DQ</imageRef>
+      <imageRef attrName="InformativeScreenshot" originalValue="a45eedb3a47f9340200770f12c7ed72a.jpg" xmlns="">01P8U6_zZYEmT5f3QmxbdQQ</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">Click</x:String>
   </ObjectRepositoryTargetData.Data>

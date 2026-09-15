@@ -1,0 +1,13 @@
+﻿{
+  "Name": "NApplicationCard - Upload Delivery Note",
+  "Type": "Screen",
+  "Id": "b5cc4gj7Ok-vrNNZfsP0Lg",
+  "Reference": "fJM94VxrM0ieI8fVNIPlpA/b5cc4gj7Ok-vrNNZfsP0Lg",
+  "ParentRef": "fJM94VxrM0ieI8fVNIPlpA/1kl_DlEVwEuQMoz9XqfEqg",
+  "Created": "2026-09-10T11:57:22.8369366Z",
+  "Updated": "2026-09-10T11:57:22.8369366Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.32.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

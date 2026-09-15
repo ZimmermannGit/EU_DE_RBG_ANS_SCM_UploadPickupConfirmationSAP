@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="PrepareSapUpload" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mg="clr-namespace:Microsoft.Graph;assembly=Microsoft.Graph" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uma="clr-namespace:UiPath.MicrosoftOffice365.Activities;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umaf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafe="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PrepareSapUpload" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uma="clr-namespace:UiPath.MicrosoftOffice365.Activities;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umaf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafe="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_LocalPdfPath" Type="OutArgument(x:String)" />
     <x:Property Name="in_PdfPath" Type="InArgument(x:String)" />
@@ -129,7 +129,7 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PrepareSapUpload" sap:VirtualizedContainerService.HintSize="937,897" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PrepareSapUpload" sap:VirtualizedContainerService.HintSize="943,655.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="sharePointFile" />
       <Variable x:TypeArguments="x:String" Name="strLocalPdfPath" />
@@ -139,7 +139,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="Assign - Build Local Temp PDF Path" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Assign - Build Local Temp PDF Path" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strLocalPdfPath]</OutArgument>
       </Assign.To>
@@ -147,7 +147,7 @@
         <InArgument x:TypeArguments="x:String">[Path.Combine(Environment.CurrentDirectory,"Data","Input",Path.GetFileName(in_PdfPath))]</InArgument>
       </Assign.Value>
     </Assign>
-    <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" ImpersonatedUserEmailAddress="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" SecurePassword="{x:Null}" Timeout="{x:Null}" Username="{x:Null}" Account="uidt0706@automotive-wan.com" ApplicationId="7e5fd973-0a88-4a06-bdd3-bc2bd2e31151" AuthenticationType="InteractiveToken" ConfigLocation="PropertiesPanel" DataStoreLocation="ORCHESTRATOR" DisplayName="Office365 Scope - Download PDF from SharePoint" EmailAddress="uidt0706@automotive-wan.com" Environment="Global" Folder="LC3" sap:VirtualizedContainerService.HintSize="452,699" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="Custom" RuntimeItemInputMode="Browse" TenantId="3bd97919-57c3-48d3-9e9a-8e4c01614a8f" UseConnectionService="False">
+    <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" ImpersonatedUserEmailAddress="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" SecurePassword="{x:Null}" Timeout="{x:Null}" Username="{x:Null}" Account="uidt0706@automotive-wan.com" ApplicationId="7e5fd973-0a88-4a06-bdd3-bc2bd2e31151" AuthenticationType="InteractiveToken" ConfigLocation="PropertiesPanel" DataStoreLocation="ORCHESTRATOR" DisplayName="Office365 Scope - Download PDF from SharePoint" EmailAddress="uidt0706@automotive-wan.com" Environment="Global" Folder="LC3" sap:VirtualizedContainerService.HintSize="334,57" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="Custom" RuntimeItemInputMode="Browse" TenantId="3bd97919-57c3-48d3-9e9a-8e4c01614a8f" UseConnectionService="False">
       <uma:Office365ApplicationScope.AuthenticationScopes>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
           <InArgument x:TypeArguments="x:String">Sites.Read.All</InArgument>
@@ -159,10 +159,6 @@
             <DelegateInArgument x:TypeArguments="x:Object" Name="ParentScope" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,472" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="uploadFolder" />
-              <Variable x:TypeArguments="mg:DriveItem" Name="folderitem" />
-            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -213,7 +209,7 @@
                 </umafm:DriveItemArgument>
               </umaf:DownloadFileConnections.DriveItemArgument>
             </umaf:DownloadFileConnections>
-            <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign DisplayName="Assign - Path" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="Assign_3">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[out_LocalPdfPath]</OutArgument>
               </Assign.To>

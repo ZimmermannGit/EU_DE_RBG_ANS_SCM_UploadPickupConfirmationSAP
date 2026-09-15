@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="g1Hu53ohxEC-3JuTEknf9Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="296, 76, 287, 351" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/ssubSUB110:SAPLALINK_DRAG_AND_DROP:0110/cntlSPLITTER/shellcont/shellcont/shell/shellcont[1]/shell' /&gt;" Guid="51eb0bc2-9aa0-4ef6-bc57-d9d37ddec9bc" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Archive from Frontend' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="0e4fd1cc0074bde3a2b76557ac0d3ced.jpg" xmlns="">0XcUST2U1-kyCANjLfopSPQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
