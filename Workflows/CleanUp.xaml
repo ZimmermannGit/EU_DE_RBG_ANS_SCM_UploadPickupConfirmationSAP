@@ -129,21 +129,21 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CleanUp" sap:VirtualizedContainerService.HintSize="937,2857" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CleanUp" sap:VirtualizedContainerService.HintSize="937,2657" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[in_blnUploadSuccessful = True]" DisplayName="If - Upload Successful" sap:VirtualizedContainerService.HintSize="488,2834" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[in_blnUploadSuccessful = True]" DisplayName="If - Upload Successful" sap:VirtualizedContainerService.HintSize="488,2634" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,1352" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,1252" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" ImpersonatedUserEmailAddress="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" SecurePassword="{x:Null}" Timeout="{x:Null}" Username="{x:Null}" Account="uidt0706@automotive-wan.com" ApplicationId="7e5fd973-0a88-4a06-bdd3-bc2bd2e31151" AuthenticationType="InteractiveToken" ConfigLocation="PropertiesPanel" DataStoreLocation="ORCHESTRATOR" DisplayName="Microsoft 365 Scope" EmailAddress="uidt0706@automotive-wan.com" Environment="Global" Folder="LC3" sap:VirtualizedContainerService.HintSize="452,1188" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="Custom" RuntimeItemInputMode="Browse" TenantId="3bd97919-57c3-48d3-9e9a-8e4c01614a8f" UseConnectionService="False">
+          <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" ImpersonatedUserEmailAddress="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" SecurePassword="{x:Null}" Timeout="{x:Null}" Username="{x:Null}" Account="uidt0706@automotive-wan.com" ApplicationId="7e5fd973-0a88-4a06-bdd3-bc2bd2e31151" AuthenticationType="InteractiveToken" ConfigLocation="PropertiesPanel" DataStoreLocation="ORCHESTRATOR" DisplayName="Microsoft 365 Scope" EmailAddress="uidt0706@automotive-wan.com" Environment="Global" Folder="LC3" sap:VirtualizedContainerService.HintSize="452,1088" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="Custom" RuntimeItemInputMode="Browse" TenantId="3bd97919-57c3-48d3-9e9a-8e4c01614a8f" UseConnectionService="False">
             <uma:Office365ApplicationScope.AuthenticationScopes>
               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                 <InArgument x:TypeArguments="x:String">Sites.Read.All</InArgument>
@@ -154,7 +154,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ParentScope" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,952" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,852" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="sharePointFile" />
                   </Sequence.Variables>
@@ -219,7 +219,7 @@
                       </umafm:DriveItemArgument>
                     </umaf:MoveItemConnections.FolderArgument>
                   </umaf:MoveItemConnections>
-                  <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID3}" ReplyTo="{x:Null}" SensitivityLabelId="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;&amp;quot;Upload &lt;/SPAN&gt;&lt;SPAN&gt;success&lt;/SPAN&gt;&lt;SPAN&gt;&amp;quot; + Environment.NewLine +&#xA;&amp;quot;File name: &amp;quot; + sharePointFile.Name + Environment.NewLine +&#xA;&amp;quot;Source: &amp;quot; + in_PdfPath&lt;/SPAN&gt;&lt;/P&gt;&quot;)]" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,490" sap2010:WorkflowViewState.IdRef="SendMailConnections_3" Importance="Normal" InputType="HTML" IsDeliveryReceiptRequested="False" IsReadReceiptRequested="False" SaveAsDraft="False" Subject="[&quot;SAP Upload Success - &quot; + sharePointFile.Name]" To="[New String(){&quot;manuel.zimmermann@aumovio.com&quot;}]" UseConnectionService="False" UseSharedMailbox="False">
+                  <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID3}" ReplyTo="{x:Null}" SensitivityLabelId="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[&quot;Upload successful&lt;br&gt;&lt;br&gt;&quot; &amp;&#xA;&quot;File name: &quot; &amp; sharePointFile.Name &amp; &quot;&lt;br&gt;&quot; &amp;&#xA;&quot;Source: &quot; &amp; in_PdfPath]" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,390" sap2010:WorkflowViewState.IdRef="SendMailConnections_3" Importance="Normal" InputType="HTML" IsDeliveryReceiptRequested="False" IsReadReceiptRequested="False" SaveAsDraft="False" Subject="[&quot;SAP Upload Success - &quot; + sharePointFile.Name]" To="[New String(){&quot;manuel.zimmermann@aumovio.com&quot;}]" UseConnectionService="False" UseSharedMailbox="False">
                     <umam:SendMailConnections.AttachmentsBackup>
                       <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
                         <usau:BackupSlot.BackupValues>
@@ -230,7 +230,14 @@
                     <umam:SendMailConnections.InputTypeBackup>
                       <usau:BackupSlot x:TypeArguments="umame:BodyInputType" StoredValue="HTML">
                         <usau:BackupSlot.BackupValues>
-                          <scg:Dictionary x:TypeArguments="umame:BodyInputType, scg:List(x:Object)" />
+                          <scg:List x:TypeArguments="x:Object" x:Key="HTML" Capacity="1">
+                            <InArgument x:TypeArguments="x:String" xml:space="preserve">[string.Format("&lt;P&gt;&lt;SPAN&gt;&amp;quot;Upload &lt;/SPAN&gt;&lt;SPAN&gt;success&lt;/SPAN&gt;&lt;SPAN&gt;&amp;quot; + Environment.NewLine +
+&amp;quot;File name: &amp;quot; + sharePointFile.Name + Environment.NewLine +
+&amp;quot;Source: &amp;quot; + in_PdfPath&lt;/SPAN&gt;&lt;/P&gt;")]</InArgument>
+                          </scg:List>
+                          <scg:List x:TypeArguments="x:Object" x:Key="TEXT" Capacity="1">
+                            <x:Null />
+                          </scg:List>
                         </usau:BackupSlot.BackupValues>
                       </usau:BackupSlot>
                     </umam:SendMailConnections.InputTypeBackup>
@@ -266,13 +273,13 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,1352" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,1252" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" ImpersonatedUserEmailAddress="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" SecurePassword="{x:Null}" Timeout="{x:Null}" Username="{x:Null}" Account="uidt0706@automotive-wan.com" ApplicationId="7e5fd973-0a88-4a06-bdd3-bc2bd2e31151" AuthenticationType="InteractiveToken" ConfigLocation="PropertiesPanel" DataStoreLocation="ORCHESTRATOR" DisplayName="Microsoft 365 Scope" EmailAddress="uidt0706@automotive-wan.com" Environment="Global" Folder="LC3" sap:VirtualizedContainerService.HintSize="452,1188" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_2" OAuthApplication="Custom" RuntimeItemInputMode="Browse" TenantId="3bd97919-57c3-48d3-9e9a-8e4c01614a8f" UseConnectionService="False">
+          <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" ImpersonatedUserEmailAddress="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" SecurePassword="{x:Null}" Timeout="{x:Null}" Username="{x:Null}" Account="uidt0706@automotive-wan.com" ApplicationId="7e5fd973-0a88-4a06-bdd3-bc2bd2e31151" AuthenticationType="InteractiveToken" ConfigLocation="PropertiesPanel" DataStoreLocation="ORCHESTRATOR" DisplayName="Microsoft 365 Scope" EmailAddress="uidt0706@automotive-wan.com" Environment="Global" Folder="LC3" sap:VirtualizedContainerService.HintSize="452,1088" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_2" OAuthApplication="Custom" RuntimeItemInputMode="Browse" TenantId="3bd97919-57c3-48d3-9e9a-8e4c01614a8f" UseConnectionService="False">
             <uma:Office365ApplicationScope.AuthenticationScopes>
               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                 <InArgument x:TypeArguments="x:String">Sites.Read.All</InArgument>
@@ -283,7 +290,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ParentScope" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,952" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,852" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="sharePointFile" />
                   </Sequence.Variables>
@@ -348,7 +355,7 @@
                       </umafm:DriveItemArgument>
                     </umaf:MoveItemConnections.FolderArgument>
                   </umaf:MoveItemConnections>
-                  <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID7}" ReplyTo="{x:Null}" SensitivityLabelId="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;&amp;quot;Upload failed.&amp;quot; + Environment.NewLine +&#xA;&amp;quot;File name: &amp;quot; + sharePointFile.Name + Environment.NewLine +&#xA;&amp;quot;Source: &amp;quot; + in_PdfPath&lt;/SPAN&gt;&lt;/P&gt;&quot;)]" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,490" sap2010:WorkflowViewState.IdRef="SendMailConnections_2" Importance="Normal" InputType="HTML" IsDeliveryReceiptRequested="False" IsReadReceiptRequested="False" SaveAsDraft="False" Subject="[&quot;SAP Upload Failed - &quot; + sharePointFile.Name]" To="[New String(){&quot;manuel.zimmermann@aumovio.com&quot;}]" UseConnectionService="False" UseSharedMailbox="False">
+                  <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID7}" ReplyTo="{x:Null}" SensitivityLabelId="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="416,390" sap2010:WorkflowViewState.IdRef="SendMailConnections_4" Importance="Normal" InputType="TEXT" IsDeliveryReceiptRequested="False" IsReadReceiptRequested="False" SaveAsDraft="False" Subject="[&quot;SAP Upload Failed - &quot; + sharePointFile.Name]" TextBody="[&quot;Upload failed&lt;br&gt;&lt;br&gt;&quot; &amp;&#xD;&#xA;&quot;File name: &quot; &amp; sharePointFile.Name &amp; &quot;&lt;br&gt;&quot; &amp;&#xD;&#xA;&quot;Source: &quot; &amp; in_PdfPath]" To="[New String(){&quot;manuel.zimmermann@aumovio.com&quot;}]" UseConnectionService="False" UseSharedMailbox="False">
                     <umam:SendMailConnections.AttachmentsBackup>
                       <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
                         <usau:BackupSlot.BackupValues>
@@ -357,9 +364,16 @@
                       </usau:BackupSlot>
                     </umam:SendMailConnections.AttachmentsBackup>
                     <umam:SendMailConnections.InputTypeBackup>
-                      <usau:BackupSlot x:TypeArguments="umame:BodyInputType" StoredValue="HTML">
+                      <usau:BackupSlot x:TypeArguments="umame:BodyInputType" StoredValue="TEXT">
                         <usau:BackupSlot.BackupValues>
-                          <scg:Dictionary x:TypeArguments="umame:BodyInputType, scg:List(x:Object)" />
+                          <scg:List x:TypeArguments="x:Object" x:Key="HTML" Capacity="1">
+                            <InArgument x:TypeArguments="x:String" xml:space="preserve">["Upload failed" &amp;
+"File name: " &amp; sharePointFile.Name &amp; "" &amp;
+"Source: " &amp; in_PdfPath]</InArgument>
+                          </scg:List>
+                          <scg:List x:TypeArguments="x:Object" x:Key="TEXT" Capacity="1">
+                            <x:Null />
+                          </scg:List>
                         </usau:BackupSlot.BackupValues>
                       </usau:BackupSlot>
                     </umam:SendMailConnections.InputTypeBackup>
