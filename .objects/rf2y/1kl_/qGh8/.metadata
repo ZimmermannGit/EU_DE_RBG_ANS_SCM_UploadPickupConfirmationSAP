@@ -1,0 +1,13 @@
+﻿{
+  "Name": "NApplicationCard - Open VL02N(1)",
+  "Type": "Screen",
+  "Id": "qGh8OtHld06WXJoEW3aYCA",
+  "Reference": "fJM94VxrM0ieI8fVNIPlpA/qGh8OtHld06WXJoEW3aYCA",
+  "ParentRef": "fJM94VxrM0ieI8fVNIPlpA/1kl_DlEVwEuQMoz9XqfEqg",
+  "Created": "2026-09-24T11:44:17.0603978Z",
+  "Updated": "2026-09-24T11:44:17.0603978Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.32.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
